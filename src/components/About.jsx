@@ -21,13 +21,29 @@ const pillars = [
 
 export function About() {
   return (
-    <Section
-      id="about"
-      eyebrow="About the event"
-      title="One morning. One road. One family."
-      subtitle={`${event.name} is the flagship run of the ${event.organizerFor} — ${event.organizerForLong}. Organised by ${event.organizer}, it brings alumni, students, teachers and the people of Halishahar together for a cause that lasts well past the finish line.`}
-    >
-      <div className="grid gap-6 md:grid-cols-3">
+    <Section id="about" eyebrow="About the event">
+      {/* the event's own words carry this section instead of a plain heading */}
+      <blockquote className="max-w-3xl">
+        <p className="text-lg italic leading-relaxed text-slate-300 sm:text-xl">{event.quote.lead}</p>
+
+        <p className="display mt-6 text-4xl leading-[1.05] text-white sm:text-6xl">{event.quote.text}</p>
+
+        <div className="mt-6 flex items-center gap-3 text-gold-500/60">
+          <span className="h-px w-16 bg-gold-500/40" />
+          <span className="text-xs">★</span>
+          <span className="h-px w-8 bg-gold-500/20" />
+        </div>
+
+        <p className="mt-6 text-base leading-relaxed text-slate-300 sm:text-lg">{event.quote.closer}</p>
+
+        <footer className="mt-5 text-xs uppercase tracking-[0.25em] text-slate-500">
+          {event.quote.author}
+          <span className="text-slate-600"> · </span>
+          {event.quote.authorNote}
+        </footer>
+      </blockquote>
+
+      <div className="mt-14 grid gap-6 md:grid-cols-3">
         {pillars.map((p, i) => (
           <div
             key={p.title}

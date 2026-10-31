@@ -7,7 +7,6 @@ import { Venue } from './components/Venue'
 import { Register } from './components/Register'
 import { Organizers } from './components/Organizers'
 import { Gallery } from './components/Gallery'
-import { QuoteBand } from './components/QuoteBand'
 import { Faq } from './components/Faq'
 import { Footer } from './components/Footer'
 import { event } from './data/event'
@@ -28,7 +27,6 @@ export default function App() {
         <Register />
         <Organizers />
         <Gallery />
-        <QuoteBand />
         <Faq />
       </main>
       <Footer />
