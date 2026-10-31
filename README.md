@@ -99,29 +99,42 @@ Nothing in this project needs environment variables or a server.
 
 ---
 
-## 4b. Or host it free on GitHub Pages
+## 4b. Or host it free on GitHub Pages (organisation site)
 
-The repo already contains everything needed — you only flip Pages on once.
+The site is published from an **organisation** account so no personal username
+appears in the address.
 
-1. In your repo on github.com: **Settings → Pages → Build and deployment →
-   Source** → choose **GitHub Actions** (not "Deploy from a branch").
-2. Push to `main`. The workflow in `.github/workflows/deploy.yml` builds the
-   site and publishes it.
-3. Watch it run under the repo's **Actions** tab. When it finishes, the site is at
-   **https://farhanamin068.github.io/AGES-marathon/**
+**One-time setup**
 
-**Why the extra base path.** GitHub Pages serves a project site from
-`/<repo-name>/`, not from `/`. The workflow sets `GITHUB_PAGES=true`, and
-`vite.config.js` then builds with `base: '/AGES-marathon/'`. Files in `public/`
-are referenced through the `asset()` helper in `src/lib/asset.js` for the same
-reason — never hard-code `src="/images/..."`, or the pictures will 404 on Pages.
+1. Create a free organisation: github.com/organizations/new → **Free** plan.
+   Give it the name you want in the URL, e.g. `agesmarathon`.
+2. Inside that organisation create a repository named **exactly**
+   `<org-name>.github.io` (for `agesmarathon` that is `agesmarathon.github.io`),
+   public, with no README.
+3. Point this project at it and push:
+   ```bash
+   git remote set-url origin https://github.com/<org-name>/<org-name>.github.io.git
+   git push -u origin main
+   npm run deploy
+   ```
+4. In that repo: **Settings → Pages → Source → Deploy from a branch** →
+   branch `gh-pages`, folder `/ (root)` → **Save**.
 
-If you rename the repository, change the `base` string in `vite.config.js` to
-match the new name.
+The site is then at **https://<org-name>.github.io**
 
-**Pages vs Vercel.** Both can run at once from the same repo; each push deploys
-to both. Vercel gives a shorter URL and faster builds, Pages is handy as a
-backup. Nothing in the code has to change to keep both working.
+**Republishing after any change**
+
+```bash
+npm run deploy
+```
+
+`vite.config.js` uses `base: '/'` because an organisation site is served from
+the root. If you ever publish to a *project* repo instead
+(`github.io/<repo>/`), set `base` to `'/<repo>/'` — images already go through
+the `asset()` helper in `src/lib/asset.js`, so they follow the base either way.
+
+**Pages vs Vercel.** Both can run from the same repo. `git push` updates
+Vercel; `npm run deploy` updates Pages.
 
 ## 5. Project structure
 
