@@ -1,8 +1,11 @@
 import { event } from '../data/event'
 import { Section } from './Section'
+import { useParallax } from '../lib/useParallax'
 import { asset } from '../lib/asset'
 
 export function Organizers() {
+  const banner = useParallax(0.05)
+
   return (
     <Section id="organizers" eyebrow="Behind the run" title="Organising committee">
       <div className="grid items-center gap-10 lg:grid-cols-5">
@@ -12,8 +15,13 @@ export function Organizers() {
           <span className="pointer-events-none absolute -right-1.5 -top-1.5 h-10 w-10 rounded-tr-3xl border-r-2 border-t-2 border-crimson-500/70" />
           <span className="pointer-events-none absolute -bottom-1.5 -left-1.5 h-10 w-10 rounded-bl-3xl border-b-2 border-l-2 border-crimson-500/70" />
           <span className="pointer-events-none absolute -bottom-1.5 -right-1.5 h-10 w-10 rounded-br-3xl border-b-2 border-r-2 border-crimson-500/70" />
-          <div className="overflow-hidden rounded-3xl border border-white/10">
-            <img src={asset("images/banner.jpg")} alt="AGES Marathon organising committee" className="w-full object-cover" />
+          <div className="relative aspect-[16/9] overflow-hidden rounded-3xl border border-white/10">
+            <img
+              ref={banner}
+              src={asset("images/banner.jpg")}
+              alt="AGES Marathon organising committee"
+              className="absolute -top-[15%] left-0 h-[130%] w-full object-cover will-change-transform"
+            />
           </div>
         </div>
 

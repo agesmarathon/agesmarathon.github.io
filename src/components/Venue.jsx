@@ -1,5 +1,6 @@
 import { event } from '../data/event'
 import { Section } from './Section'
+import { useParallax } from '../lib/useParallax'
 import { asset } from '../lib/asset'
 
 const rows = [
@@ -10,14 +11,21 @@ const rows = [
 ]
 
 export function Venue() {
+  const photo = useParallax(0.07)
+
   return (
     <Section id="venue" eyebrow="Where" title="Start & finish line">
       <div className="grid items-center gap-12 lg:grid-cols-2">
         {/* photo with an offset red outline behind it */}
         <div className="relative">
           <span className="pointer-events-none absolute -bottom-4 -right-4 hidden h-full w-full rounded-3xl border-2 border-crimson-500/40 sm:block" />
-          <div className="relative overflow-hidden rounded-3xl border border-white/10">
-            <img src={asset("images/venue.jpg")} alt={event.venue} className="h-[420px] w-full object-cover" />
+          <div className="relative h-[420px] overflow-hidden rounded-3xl border border-white/10">
+            <img
+              ref={photo}
+              src={asset("images/venue.jpg")}
+              alt={event.venue}
+              className="absolute -top-[18%] left-0 h-[136%] w-full object-cover will-change-transform"
+            />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-forest-950 to-transparent p-5">
               <span className="inline-flex items-center gap-2 rounded-full border border-crimson-500/40 bg-forest-950/80 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-crimson-400 backdrop-blur">
                 📍 Halishahar, Chattogram

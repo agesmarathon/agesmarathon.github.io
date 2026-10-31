@@ -1,5 +1,6 @@
 import { event } from '../data/event'
 import { Countdown } from './Countdown'
+import { useParallax } from '../lib/useParallax'
 import { asset } from '../lib/asset'
 
 const facts = [
@@ -9,12 +10,15 @@ const facts = [
 ]
 
 export function Hero() {
+  const bg = useParallax(0.12)
+
   return (
     <section id="top" className="relative flex min-h-screen items-center overflow-hidden">
       <img
+        ref={bg}
         src={asset("images/run.jpg")}
         alt="Runners at a past AGES event"
-        className="absolute inset-0 h-full w-full object-cover object-center"
+        className="absolute -top-[20%] left-0 h-[140%] w-full object-cover object-center will-change-transform"
       />
       <div className="absolute inset-0 bg-gradient-to-br from-forest-950 via-forest-950/85 to-forest-900/60" />
       <div className="absolute inset-0 bg-gradient-to-t from-forest-950 via-transparent to-forest-950/70" />
