@@ -1,14 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  --color-navy-950: #061531;
-  --color-navy-900: #0a2050;
-  --color-navy-800: #0f2d6b;
-  --color-navy-700: #16407f;
-  --color-gold-400: #ffd23f;
-  --color-gold-500: #ffc12b;
-  --color-gold-600: #e6a200;
-  --color-lime-brand: #a3d33c;
+  /* Victory Day palette: the green, red and white of the Bangladesh flag.
+     Deep greens carry the page, red is the accent, white does the talking. */
+  --color-forest-950: #04251a;
+  --color-forest-900: #07331f;
+  --color-forest-800: #0c4a2c;
+  --color-forest-700: #10603a;
+
+  --color-crimson-400: #ff5c69; /* red as TEXT, light enough to read on green */
+  --color-crimson-500: #d81f36; /* buttons and solid fills */
+  --color-crimson-600: #b3152a; /* pressed / deeper fills */
 
   --font-display: "Barlow Condensed", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
@@ -20,7 +22,7 @@ html {
 }
 
 body {
-  background-color: var(--color-navy-950);
+  background-color: var(--color-forest-950);
   color: #e8edf7;
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
@@ -81,7 +83,7 @@ body {
   width: 1.75rem;
   height: 1.75rem;
   border-radius: 9999px;
-  background: var(--color-navy-950);
+  background: var(--color-forest-950);
 }
 .ticket-notch::before { left: -0.875rem; top: 50%; transform: translateY(-50%); }
 .ticket-notch::after  { right: -0.875rem; top: 50%; transform: translateY(-50%); }

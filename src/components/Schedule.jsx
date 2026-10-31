@@ -11,16 +11,16 @@ export function Schedule() {
     >
       <ol className="relative space-y-4 pl-10 sm:pl-16">
         {/* the line the markers sit on */}
-        <span className="absolute left-[13px] top-2 bottom-2 w-px bg-gradient-to-b from-gold-500/70 via-gold-500/25 to-transparent sm:left-[27px]" />
+        <span className="absolute left-[13px] top-2 bottom-2 w-px bg-gradient-to-b from-crimson-500/70 via-crimson-500/25 to-transparent sm:left-[27px]" />
 
         {schedule.map((s, i) => (
           <li key={s.time} className="relative">
-            <span className="absolute -left-10 top-5 flex h-7 w-7 items-center justify-center rounded-full border border-gold-500/50 bg-navy-950 text-[10px] font-bold text-gold-500 sm:-left-16">
+            <span className="absolute -left-10 top-5 flex h-7 w-7 items-center justify-center rounded-full border border-crimson-500/50 bg-forest-950 text-[10px] font-bold text-crimson-400 sm:-left-16">
               {i + 1}
             </span>
 
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 transition hover:-translate-y-0.5 hover:border-gold-500/35 hover:bg-white/[0.06] sm:flex sm:items-center sm:gap-6">
-              <span className="display inline-block shrink-0 rounded-lg border border-gold-500/30 bg-gold-500/10 px-3 py-1 text-lg text-gold-400">
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 transition hover:-translate-y-0.5 hover:border-crimson-500/35 hover:bg-white/[0.06] sm:flex sm:items-center sm:gap-6">
+              <span className="display inline-block shrink-0 rounded-lg border border-crimson-500/30 bg-crimson-500/10 px-3 py-1 text-lg text-crimson-400">
                 {s.time}
               </span>
               <div className="mt-3 sm:mt-0">

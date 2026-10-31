@@ -17,7 +17,7 @@ function Lightbox({ photo, onClose }) {
   return (
     <div
       onClick={onClose}
-      className="fixed inset-0 z-[60] flex items-center justify-center bg-navy-950/95 p-4 backdrop-blur"
+      className="fixed inset-0 z-[60] flex items-center justify-center bg-forest-950/95 p-4 backdrop-blur"
       role="dialog"
       aria-label={photo.caption}
     >
@@ -35,7 +35,7 @@ function Lightbox({ photo, onClose }) {
           className="max-h-[78vh] w-auto rounded-2xl border border-white/10 object-contain"
         />
         <figcaption className="mt-4 text-center">
-          <p className="display text-xl text-gold-400">{photo.caption}</p>
+          <p className="display text-xl text-crimson-400">{photo.caption}</p>
           <p className="mt-1 text-sm text-slate-400">{photo.note}</p>
         </figcaption>
       </figure>
@@ -58,7 +58,7 @@ export function Gallery() {
           <button
             key={p.src}
             onClick={() => setOpen(p)}
-            className={`group relative overflow-hidden rounded-3xl border border-white/10 transition hover:-translate-y-1 hover:border-gold-500/50 ${
+            className={`group relative overflow-hidden rounded-3xl border border-white/10 transition hover:-translate-y-1 hover:border-crimson-500/50 ${
               i === 0 ? 'md:col-span-2' : ''
             }`}
           >
@@ -70,14 +70,14 @@ export function Gallery() {
                 i === 0 ? 'h-72 md:h-[30rem]' : 'h-80 md:h-[26rem]'
               }`}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/15 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-forest-950 via-forest-950/15 to-transparent" />
 
             <div className="absolute inset-x-0 bottom-0 p-5 text-left">
               <p className="display text-2xl text-white">{p.caption}</p>
               <p className="mt-1 text-sm text-slate-300">{p.note}</p>
             </div>
 
-            <span className="absolute right-4 top-4 rounded-full border border-white/25 bg-navy-950/60 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white opacity-0 backdrop-blur transition group-hover:opacity-100">
+            <span className="absolute right-4 top-4 rounded-full border border-white/25 bg-forest-950/60 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white opacity-0 backdrop-blur transition group-hover:opacity-100">
               View ⤢
             </span>
           </button>
@@ -85,7 +85,7 @@ export function Gallery() {
       </div>
 
       <p className="mt-6 flex items-center gap-2 text-sm text-slate-400">
-        <span className="text-gold-500">★</span>
+        <span className="text-crimson-400">★</span>
         Photos from past runs by AGES members. Yours could be here next — the December start list is open.
       </p>
 

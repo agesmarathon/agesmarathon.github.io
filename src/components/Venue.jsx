@@ -13,13 +13,13 @@ export function Venue() {
   return (
     <Section id="venue" eyebrow="Where" title="Start & finish line">
       <div className="grid items-center gap-12 lg:grid-cols-2">
-        {/* photo with an offset gold outline behind it */}
+        {/* photo with an offset red outline behind it */}
         <div className="relative">
-          <span className="pointer-events-none absolute -bottom-4 -right-4 hidden h-full w-full rounded-3xl border-2 border-gold-500/40 sm:block" />
+          <span className="pointer-events-none absolute -bottom-4 -right-4 hidden h-full w-full rounded-3xl border-2 border-crimson-500/40 sm:block" />
           <div className="relative overflow-hidden rounded-3xl border border-white/10">
             <img src={asset("images/venue.jpg")} alt={event.venue} className="h-[420px] w-full object-cover" />
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy-950 to-transparent p-5">
-              <span className="inline-flex items-center gap-2 rounded-full border border-gold-500/40 bg-navy-950/80 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-gold-400 backdrop-blur">
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-forest-950 to-transparent p-5">
+              <span className="inline-flex items-center gap-2 rounded-full border border-crimson-500/40 bg-forest-950/80 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-crimson-400 backdrop-blur">
                 📍 Halishahar, Chattogram
               </span>
             </div>
@@ -46,7 +46,7 @@ export function Venue() {
             href={event.mapsUrl}
             target="_blank"
             rel="noreferrer"
-            className="mt-8 inline-block rounded-full border border-white/25 px-7 py-3 text-sm font-semibold text-white transition hover:border-gold-500/60 hover:bg-white/10"
+            className="mt-8 inline-block rounded-full border border-white/25 px-7 py-3 text-sm font-semibold text-white transition hover:border-crimson-500/60 hover:bg-white/10"
           >
             Open in Google Maps ↗
           </a>

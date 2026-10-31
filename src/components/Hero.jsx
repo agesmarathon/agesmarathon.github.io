@@ -16,8 +16,8 @@ export function Hero() {
         alt="Runners at a past AGES event"
         className="absolute inset-0 h-full w-full object-cover object-center"
       />
-      <div className="absolute inset-0 bg-gradient-to-br from-navy-950 via-navy-950/85 to-navy-900/60" />
-      <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-navy-950/70" />
+      <div className="absolute inset-0 bg-gradient-to-br from-forest-950 via-forest-950/85 to-forest-900/60" />
+      <div className="absolute inset-0 bg-gradient-to-t from-forest-950 via-transparent to-forest-950/70" />
       <div className="stripes absolute inset-0" />
 
       {/* date stamp running up the left edge, desktop only */}
@@ -28,18 +28,18 @@ export function Hero() {
       </div>
 
       <div className="relative mx-auto w-full max-w-6xl px-5 pt-28 pb-24">
-        <span className="inline-flex items-center gap-2 rounded-full border border-gold-500/40 bg-gold-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-gold-400">
-          <span className="h-1.5 w-1.5 rounded-full bg-gold-500" />
+        <span className="inline-flex items-center gap-2 rounded-full border border-crimson-500/40 bg-crimson-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-crimson-400">
+          <span className="h-1.5 w-1.5 rounded-full bg-crimson-500" />
           {event.motto}
         </span>
 
-        {/* gold rule beside the headline */}
+        {/* red rule beside the headline */}
         <div className="mt-6 flex gap-5">
-          <span className="mt-2 hidden w-1 shrink-0 rounded-full bg-gradient-to-b from-gold-500 to-transparent sm:block" />
+          <span className="mt-2 hidden w-1 shrink-0 rounded-full bg-gradient-to-b from-crimson-500 to-transparent sm:block" />
           <h1 className="display text-6xl leading-[0.9] text-white sm:text-8xl lg:text-[7.5rem]">
             AGES
             <br />
-            <span className="text-gold-500">Marathon</span>{' '}
+            <span className="text-crimson-400">Marathon</span>{' '}
             <span className="text-white/90">{event.year}</span>
           </h1>
         </div>
@@ -61,7 +61,7 @@ export function Hero() {
         <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
           <a
             href="#form"
-            className="group rounded-full bg-gold-500 px-8 py-4 text-center text-base font-bold text-navy-950 shadow-xl shadow-gold-600/20 transition hover:-translate-y-0.5 hover:bg-gold-400"
+            className="group rounded-full bg-crimson-500 px-8 py-4 text-center text-base font-bold text-white shadow-xl shadow-crimson-600/20 transition hover:-translate-y-0.5 hover:bg-crimson-400"
           >
             Register Free Online
             <span className="ml-2 inline-block transition-transform group-hover:translate-x-1">→</span>
@@ -76,7 +76,7 @@ export function Hero() {
 
         <div className="mt-14">
           <p className="mb-3 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">
-            <span className="h-px w-6 bg-gold-500/50" />
+            <span className="h-px w-6 bg-crimson-500/50" />
             Flag-off countdown
           </p>
           <Countdown dateISO={event.dateISO} />
@@ -90,7 +90,7 @@ export function Hero() {
       {/* scroll cue */}
       <a
         href="#about"
-        className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-white/50 transition hover:text-gold-400 sm:flex"
+        className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-white/50 transition hover:text-crimson-400 sm:flex"
       >
         Scroll
         <span className="animate-bounce text-base">↓</span>

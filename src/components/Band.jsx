@@ -4,10 +4,10 @@ const bandWords = ['Run for Health', 'Run for Unity', 'Run for AGES', event.mott
 
 // Endless scrolling strip of race slogans. The list is rendered twice so the
 // loop never shows a gap.
-export function Band({ tone = 'gold' }) {
+export function Band({ tone = 'red' }) {
   const skin =
-    tone === 'gold'
-      ? 'border-gold-500/30 bg-gold-500/10 text-gold-400/90'
+    tone === 'red'
+      ? 'border-crimson-500/30 bg-crimson-500/10 text-crimson-400/90'
       : 'border-white/10 bg-white/[0.03] text-slate-400'
 
   return (

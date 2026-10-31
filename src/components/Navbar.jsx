@@ -24,21 +24,21 @@ export function Navbar() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-navy-950/90 shadow-lg shadow-black/30 backdrop-blur' : 'bg-transparent'
+        scrolled ? 'bg-forest-950/90 shadow-lg shadow-black/30 backdrop-blur' : 'bg-transparent'
       }`}
     >
       <nav className="mx-auto flex h-20 w-full max-w-6xl items-center justify-between px-5">
         <a href="#top" className="flex items-center gap-3">
-          <img src={asset("images/logo.jpg")} alt="AGES logo" className="h-11 w-11 rounded-full object-cover ring-2 ring-gold-500/60" />
+          <img src={asset("images/logo.jpg")} alt="AGES logo" className="h-11 w-11 rounded-full object-cover ring-2 ring-crimson-500/60" />
           <span className="display text-xl leading-none text-white">
-            AGES <span className="text-gold-500">Marathon</span>
+            AGES <span className="text-crimson-400">Marathon</span>
           </span>
         </a>
 
         <ul className="hidden items-center gap-8 md:flex">
           {links.map((l) => (
             <li key={l.href}>
-              <a href={l.href} className="text-sm font-medium text-slate-200 transition hover:text-gold-400">
+              <a href={l.href} className="text-sm font-medium text-slate-200 transition hover:text-crimson-400">
                 {l.label}
               </a>
             </li>
@@ -46,7 +46,7 @@ export function Navbar() {
           <li>
             <a
               href="#register"
-              className="rounded-full bg-gold-500 px-5 py-2.5 text-sm font-bold text-navy-950 transition hover:bg-gold-400"
+              className="rounded-full bg-crimson-500 px-5 py-2.5 text-sm font-bold text-white transition hover:bg-crimson-400"
             >
               Register Now
             </a>
@@ -64,7 +64,7 @@ export function Navbar() {
       </nav>
 
       {open && (
-        <div className="border-t border-white/10 bg-navy-950/95 px-5 pb-6 pt-2 backdrop-blur md:hidden">
+        <div className="border-t border-white/10 bg-forest-950/95 px-5 pb-6 pt-2 backdrop-blur md:hidden">
           {links.map((l) => (
             <a
               key={l.href}
@@ -78,7 +78,7 @@ export function Navbar() {
           <a
             href="#register"
             onClick={() => setOpen(false)}
-            className="mt-4 block rounded-full bg-gold-500 py-3 text-center font-bold text-navy-950"
+            className="mt-4 block rounded-full bg-crimson-500 py-3 text-center font-bold text-white"
           >
             Register Now
           </a>

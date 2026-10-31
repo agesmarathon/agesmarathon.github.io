@@ -15,7 +15,7 @@ export function Faq() {
               key={f.q}
               className={`overflow-hidden rounded-2xl border transition ${
                 isOpen
-                  ? 'border-gold-500/45 bg-gradient-to-b from-gold-500/[0.08] to-white/[0.02]'
+                  ? 'border-crimson-500/45 bg-gradient-to-b from-crimson-500/[0.08] to-white/[0.02]'
                   : 'border-white/10 bg-white/[0.03] hover:border-white/25'
               }`}
             >
@@ -27,7 +27,7 @@ export function Faq() {
                 <span
                   className={`display flex h-8 w-8 shrink-0 items-center justify-center rounded-full border text-sm transition ${
                     isOpen
-                      ? 'border-gold-500 bg-gold-500 text-navy-950'
+                      ? 'border-crimson-500 bg-crimson-500 text-white'
                       : 'border-white/20 text-slate-400'
                   }`}
                 >
@@ -35,7 +35,7 @@ export function Faq() {
                 </span>
                 <span className="flex-1 font-semibold text-white">{f.q}</span>
                 <span
-                  className={`text-xl text-gold-500 transition-transform duration-300 ${
+                  className={`text-xl text-crimson-400 transition-transform duration-300 ${
                     isOpen ? 'rotate-45' : ''
                   }`}
                 >
@@ -52,7 +52,7 @@ export function Faq() {
         })}
       </div>
 
-      <div className="mt-10 flex flex-col items-center justify-between gap-5 rounded-2xl border border-gold-500/30 bg-gold-500/[0.07] p-7 text-center sm:flex-row sm:text-left">
+      <div className="mt-10 flex flex-col items-center justify-between gap-5 rounded-2xl border border-crimson-500/30 bg-crimson-500/[0.07] p-7 text-center sm:flex-row sm:text-left">
         <div>
           <h3 className="display text-2xl text-white">Still have a question?</h3>
           <p className="mt-1 text-sm text-slate-300">
@@ -61,7 +61,7 @@ export function Faq() {
         </div>
         <a
           href="#form"
-          className="shrink-0 rounded-full bg-gold-500 px-7 py-3 text-sm font-bold text-navy-950 transition hover:bg-gold-400"
+          className="shrink-0 rounded-full bg-crimson-500 px-7 py-3 text-sm font-bold text-white transition hover:bg-crimson-400"
         >
           Register now →
         </a>

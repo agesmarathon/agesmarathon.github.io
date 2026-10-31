@@ -34,7 +34,7 @@ export default function App() {
       {/* sticky mobile call-to-action */}
       <a
         href="#form"
-        className="fixed inset-x-4 bottom-4 z-40 rounded-full bg-gold-500 py-3.5 text-center font-bold text-navy-950 shadow-2xl shadow-black/50 md:hidden"
+        className="fixed inset-x-4 bottom-4 z-40 rounded-full bg-crimson-500 py-3.5 text-center font-bold text-white shadow-2xl shadow-black/50 md:hidden"
       >
         Register for {event.name}
       </a>

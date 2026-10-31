@@ -27,7 +27,7 @@ export function Categories() {
         {categories.map((c) => (
           <div
             key={c.id}
-            className="group relative flex flex-col rounded-3xl border border-gold-500/60 bg-gradient-to-b from-gold-500/15 to-white/[0.03] p-7 shadow-xl shadow-gold-600/10 transition hover:-translate-y-1 hover:border-gold-500" 
+            className="group relative flex flex-col rounded-3xl border border-crimson-500/60 bg-gradient-to-b from-crimson-500/15 to-white/[0.03] p-7 shadow-xl shadow-crimson-600/10 transition hover:-translate-y-1 hover:border-crimson-500" 
           >
             {/* BIB header strip */}
             <div className="flex items-center justify-between gap-3">
@@ -43,7 +43,7 @@ export function Categories() {
             {/* the distance, printed like a BIB number */}
             <div className="mt-6 text-center">
               <div className="display text-7xl leading-none text-white sm:text-8xl">{c.distance}</div>
-              <h3 className="mt-3 text-lg font-semibold text-gold-400">{c.name}</h3>
+              <h3 className="mt-3 text-lg font-semibold text-crimson-400">{c.name}</h3>
               <p className="mt-1 text-sm text-slate-400">{c.who}</p>
             </div>
 
@@ -68,7 +68,7 @@ export function Categories() {
             <ul className="mt-6 flex-1 space-y-2 text-sm text-slate-300">
               {c.perks.map((p) => (
                 <li key={p} className="flex gap-2">
-                  <span className="text-gold-500">✓</span>
+                  <span className="text-crimson-400">✓</span>
                   {p}
                 </li>
               ))}
@@ -76,7 +76,7 @@ export function Categories() {
 
             <a
               href="#form"
-              className="mt-7 rounded-full bg-gold-500 py-3 text-center text-sm font-bold text-navy-950 transition hover:bg-gold-400" 
+              className="mt-7 rounded-full bg-crimson-500 py-3 text-center text-sm font-bold text-white transition hover:bg-crimson-400" 
             >
               Register for {c.distance}
             </a>
@@ -85,7 +85,7 @@ export function Categories() {
       </div>
 
       <p className="mt-7 flex flex-wrap items-center gap-x-2 text-sm text-slate-400">
-        <span className="text-gold-500">★</span>
+        <span className="text-crimson-400">★</span>
         Entry fee is {payment.fee} for every participant, paid by {payment.method}. Certificates are not issued for
         this event.
       </p>

@@ -33,7 +33,7 @@ export function Countdown({ dateISO }) {
           key={c.l}
           className="rounded-xl border border-white/10 bg-white/5 px-2 py-3 text-center backdrop-blur"
         >
-          <div className="display text-3xl text-gold-400 sm:text-4xl tabular-nums">
+          <div className="display text-3xl text-crimson-400 sm:text-4xl tabular-nums">
             {String(c.v).padStart(2, '0')}
           </div>
           <div className="mt-1 text-[10px] font-semibold uppercase tracking-widest text-slate-400">{c.l}</div>
