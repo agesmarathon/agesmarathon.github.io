@@ -43,6 +43,13 @@ export function About() {
         </footer>
       </blockquote>
 
+      {/* who AGES is, for anyone landing here for the first time */}
+      <p className="mt-10 max-w-3xl border-l-2 border-white/10 pl-5 text-base leading-relaxed text-slate-400">
+        {event.name} is the flagship run of the {event.organizerFor} — {event.organizerForLong}. Organised by{' '}
+        {event.organizer}, it brings alumni, students, teachers and the people of Halishahar together for a cause
+        that lasts well past the finish line.
+      </p>
+
       <div className="mt-14 grid gap-6 md:grid-cols-3">
         {pillars.map((p, i) => (
           <div
