@@ -31,7 +31,7 @@ export function Navbar() {
         <a href="#top" className="flex items-center gap-3">
           <img src={asset("images/logo.jpg")} alt="AGES logo" className="h-11 w-11 rounded-full object-cover ring-2 ring-crimson-500/60" />
           <span className="display text-xl leading-none text-white">
-            AGES <span className="text-crimson-400">Marathon</span>
+            <span className="text-crimson-400">AGES</span> Marathon
           </span>
         </a>
 

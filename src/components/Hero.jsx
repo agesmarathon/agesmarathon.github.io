@@ -37,10 +37,9 @@ export function Hero() {
         <div className="mt-6 flex gap-5">
           <span className="mt-2 hidden w-1 shrink-0 rounded-full bg-gradient-to-b from-crimson-500 to-transparent sm:block" />
           <h1 className="display text-6xl leading-[0.9] text-white sm:text-8xl lg:text-[7.5rem]">
-            AGES
+            <span className="text-crimson-400">AGES</span>
             <br />
-            <span className="text-crimson-400">Marathon</span>{' '}
-            <span className="text-white/90">{event.year}</span>
+            Marathon <span className="text-white/80">{event.year}</span>
           </h1>
         </div>
 

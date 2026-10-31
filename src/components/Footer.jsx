@@ -19,7 +19,7 @@ export function Footer() {
               />
               <div>
                 <div className="display text-2xl text-white">
-                  AGES <span className="text-crimson-400">Marathon</span>
+                  <span className="text-crimson-400">AGES</span> Marathon
                 </div>
                 <div className="text-xs uppercase tracking-widest text-slate-500">{event.motto}</div>
               </div>
