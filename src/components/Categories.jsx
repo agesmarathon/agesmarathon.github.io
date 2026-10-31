@@ -26,11 +26,7 @@ export function Categories() {
         {categories.map((c) => (
           <div
             key={c.id}
-            className={`group relative flex flex-col rounded-3xl border p-7 transition hover:-translate-y-1 ${
-              c.featured
-                ? 'border-gold-500/60 bg-gradient-to-b from-gold-500/15 to-white/[0.03] shadow-xl shadow-gold-600/10'
-                : 'border-white/10 bg-white/[0.04] hover:border-white/25'
-            }`}
+            className="group relative flex flex-col rounded-3xl border border-gold-500/60 bg-gradient-to-b from-gold-500/15 to-white/[0.03] p-7 shadow-xl shadow-gold-600/10 transition hover:-translate-y-1 hover:border-gold-500" 
           >
             {/* BIB header strip */}
             <div className="flex items-center justify-between gap-3">
@@ -79,11 +75,7 @@ export function Categories() {
 
             <a
               href="#form"
-              className={`mt-7 rounded-full py-3 text-center text-sm font-bold transition ${
-                c.featured
-                  ? 'bg-gold-500 text-navy-950 hover:bg-gold-400'
-                  : 'border border-white/25 text-white hover:bg-white/10'
-              }`}
+              className="mt-7 rounded-full bg-gold-500 py-3 text-center text-sm font-bold text-navy-950 transition hover:bg-gold-400" 
             >
               Register for {c.distance}
             </a>

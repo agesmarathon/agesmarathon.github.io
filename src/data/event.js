@@ -50,7 +50,6 @@ export const categories = [
     fee: payment.fee,
     age: 'No age limit',
     perks: ['Finisher medal', 'Official jersey', 'Race BIB', 'Refreshments'],
-    featured: true,
   },
   {
     id: 'women',
@@ -60,7 +59,6 @@ export const categories = [
     fee: payment.fee,
     age: 'No age limit',
     perks: ['Finisher medal', 'Official jersey', 'Race BIB', 'Refreshments'],
-    featured: false,
   },
 ]
 
