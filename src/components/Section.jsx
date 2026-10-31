@@ -21,7 +21,7 @@ export function Section({ id, eyebrow, title, subtitle, children, className = ''
             </div>
           </>
         )}
-        {subtitle && <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-300">{subtitle}</p>}
+        {subtitle && <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-200">{subtitle}</p>}
         <div className={title ? 'mt-12' : ''}>{children}</div>
       </div>
     </section>

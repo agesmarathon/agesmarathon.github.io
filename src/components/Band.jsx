@@ -8,7 +8,7 @@ export function Band({ tone = 'red' }) {
   const skin =
     tone === 'red'
       ? 'border-crimson-500/30 bg-crimson-500/10 text-crimson-400/90'
-      : 'border-white/10 bg-white/[0.03] text-slate-400'
+      : 'border-white/10 bg-white/[0.03] text-slate-300'
 
   return (
     <div className={`relative overflow-hidden border-y py-3 ${skin}`}>

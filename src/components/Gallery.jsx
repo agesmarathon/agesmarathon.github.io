@@ -36,7 +36,7 @@ function Lightbox({ photo, onClose }) {
         />
         <figcaption className="mt-4 text-center">
           <p className="display text-xl text-crimson-400">{photo.caption}</p>
-          <p className="mt-1 text-sm text-slate-400">{photo.note}</p>
+          <p className="mt-1 text-sm text-slate-300">{photo.note}</p>
         </figcaption>
       </figure>
     </div>
@@ -74,7 +74,7 @@ export function Gallery() {
 
             <div className="absolute inset-x-0 bottom-0 p-5 text-left">
               <p className="display text-2xl text-white">{p.caption}</p>
-              <p className="mt-1 text-sm text-slate-300">{p.note}</p>
+              <p className="mt-1 text-sm text-slate-200">{p.note}</p>
             </div>
 
             <span className="absolute right-4 top-4 rounded-full border border-white/25 bg-forest-950/60 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white opacity-0 backdrop-blur transition group-hover:opacity-100">
@@ -84,7 +84,7 @@ export function Gallery() {
         ))}
       </div>
 
-      <p className="mt-6 flex items-center gap-2 text-sm text-slate-400">
+      <p className="mt-6 flex items-center gap-2 text-sm text-slate-300">
         <span className="text-crimson-400">★</span>
         Photos from past runs by AGES members. Yours could be here next — the December start list is open.
       </p>

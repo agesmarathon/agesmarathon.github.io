@@ -24,7 +24,7 @@ export function About() {
     <Section id="about" eyebrow="About the event">
       {/* the event's own words carry this section instead of a plain heading */}
       <blockquote className="max-w-3xl">
-        <p className="text-lg italic leading-relaxed text-slate-300 sm:text-xl">{event.quote.lead}</p>
+        <p className="text-lg italic leading-relaxed text-slate-200 sm:text-xl">{event.quote.lead}</p>
 
         <p className="display mt-6 text-4xl leading-[1.05] text-white sm:text-6xl">{event.quote.text}</p>
 
@@ -34,17 +34,17 @@ export function About() {
           <span className="h-px w-8 bg-crimson-500/20" />
         </div>
 
-        <p className="mt-6 text-base leading-relaxed text-slate-300 sm:text-lg">{event.quote.closer}</p>
+        <p className="mt-6 text-base leading-relaxed text-slate-200 sm:text-lg">{event.quote.closer}</p>
 
-        <footer className="mt-5 text-xs uppercase tracking-[0.25em] text-slate-500">
+        <footer className="mt-5 text-xs uppercase tracking-[0.25em] text-slate-400">
           {event.quote.author}
-          <span className="text-slate-600"> · </span>
+          <span className="text-slate-400"> · </span>
           {event.quote.authorNote}
         </footer>
       </blockquote>
 
       {/* who AGES is, for anyone landing here for the first time */}
-      <p className="mt-10 max-w-3xl border-l-2 border-white/10 pl-5 text-base leading-relaxed text-slate-400">
+      <p className="mt-10 max-w-3xl border-l-2 border-crimson-500/50 pl-5 text-lg font-medium leading-relaxed text-slate-100 sm:text-xl">
         {event.name} is the flagship run of the {event.organizerFor} — {event.organizerForLong}. Organised by{' '}
         {event.organizer}, it brings alumni, students, teachers and the people of Halishahar together for a cause
         that lasts well past the finish line.
@@ -65,7 +65,7 @@ export function About() {
               {p.icon}
             </div>
             <h3 className="display mt-5 text-2xl text-white">{p.title}</h3>
-            <p className="mt-3 text-sm leading-relaxed text-slate-300">{p.text}</p>
+            <p className="mt-3 text-sm leading-relaxed text-slate-200">{p.text}</p>
             <span className="mt-5 block h-px w-10 bg-crimson-500/50 transition-all group-hover:w-20" />
           </div>
         ))}
@@ -74,8 +74,8 @@ export function About() {
       <div className="mt-10 grid grid-cols-2 divide-x divide-y divide-dashed divide-white/10 overflow-hidden rounded-2xl border border-crimson-500/25 bg-gradient-to-br from-crimson-500/[0.07] to-transparent md:grid-cols-4 md:divide-y-0">
         {stats.map((s) => (
           <div key={s.label} className="px-6 py-8 text-center">
-            <div className="display text-4xl text-crimson-400">{s.value}</div>
-            <div className="mt-2 text-[11px] uppercase tracking-widest text-slate-400">{s.label}</div>
+            <div className="display glow-red text-4xl text-crimson-400">{s.value}</div>
+            <div className="mt-2 text-[11px] uppercase tracking-widest text-slate-300">{s.label}</div>
           </div>
         ))}
       </div>

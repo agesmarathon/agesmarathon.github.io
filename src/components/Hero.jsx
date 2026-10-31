@@ -37,19 +37,19 @@ export function Hero() {
         <div className="mt-6 flex gap-5">
           <span className="mt-2 hidden w-1 shrink-0 rounded-full bg-gradient-to-b from-crimson-500 to-transparent sm:block" />
           <h1 className="display text-6xl leading-[0.9] text-white sm:text-8xl lg:text-[7.5rem]">
-            <span className="text-crimson-400">AGES</span>
+            <span className="glow-red text-crimson-400">AGES</span>
             <br />
             Marathon <span className="text-white/80">{event.year}</span>
           </h1>
         </div>
 
-        <p className="mt-5 max-w-xl text-lg font-medium text-slate-200">{event.tagline}</p>
+        <p className="mt-5 max-w-xl text-lg font-medium text-slate-100">{event.tagline}</p>
 
         <div className="mt-7 flex flex-wrap gap-3">
           {facts.map((f) => (
             <span
               key={f.text}
-              className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-4 py-2 text-sm text-slate-200 backdrop-blur"
+              className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-4 py-2 text-sm text-slate-100 backdrop-blur"
             >
               <span>{f.icon}</span>
               {f.text}
@@ -74,14 +74,14 @@ export function Hero() {
         </div>
 
         <div className="mt-14">
-          <p className="mb-3 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">
+          <p className="mb-3 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-slate-300">
             <span className="h-px w-6 bg-crimson-500/50" />
             Flag-off countdown
           </p>
           <Countdown dateISO={event.dateISO} />
         </div>
 
-        <p className="mt-10 text-xs uppercase tracking-[0.2em] text-slate-400">
+        <p className="mt-10 text-xs uppercase tracking-[0.2em] text-slate-300">
           Organized by {event.organizer} · on behalf of {event.organizerFor}
         </p>
       </div>

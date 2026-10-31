@@ -23,7 +23,7 @@ export function Organizers() {
             <span className="h-px w-6 bg-crimson-500/50" />
             on behalf of AGES
           </p>
-          <p className="mt-5 leading-relaxed text-slate-300">
+          <p className="mt-5 leading-relaxed text-slate-200">
             The Association of GNHS Ex-Students is the official alumni organization of Garib-E-Newaz High School in
             Halishahar Housing Estate, Chattogram. Founded on 30 September 2023, it works to keep every batch connected — through
             welfare drives, school support and events like this one. The marathon is run entirely by volunteers from
@@ -31,13 +31,13 @@ export function Organizers() {
           </p>
 
           <div className="mt-8 space-y-3 rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-sm">
-            <p className="flex items-center gap-3 text-slate-300">
+            <p className="flex items-center gap-3 text-slate-200">
               <span className="text-crimson-400">✉</span>
               <a href={`mailto:${event.email}`} className="text-crimson-400 underline underline-offset-4">
                 {event.email}
               </a>
             </p>
-            <p className="flex items-center gap-3 text-slate-300">
+            <p className="flex items-center gap-3 text-slate-200">
               <span className="text-crimson-400">☎</span>
               <a href={`tel:${event.phone.replace(/[^+\d]/g, '')}`} className="text-crimson-400 underline underline-offset-4">
                 {event.phone}

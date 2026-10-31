@@ -28,7 +28,7 @@ export function Venue() {
 
         <div>
           <h3 className="display text-3xl text-white sm:text-4xl">{event.venue}</h3>
-          <p className="mt-3 leading-relaxed text-slate-300">{event.venueAddress}</p>
+          <p className="mt-3 leading-relaxed text-slate-200">{event.venueAddress}</p>
 
           <dl className="mt-8 divide-y divide-dashed divide-white/10 border-y border-dashed border-white/10 text-sm">
             {rows.map((r) => (
@@ -36,7 +36,7 @@ export function Venue() {
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.05]">
                   {r.icon}
                 </span>
-                <dt className="w-24 shrink-0 text-xs uppercase tracking-widest text-slate-400">{r.label}</dt>
+                <dt className="w-24 shrink-0 text-xs uppercase tracking-widest text-slate-300">{r.label}</dt>
                 <dd className="font-medium text-white">{r.value}</dd>
               </div>
             ))}

@@ -28,7 +28,7 @@ export function Faq() {
                   className={`display flex h-8 w-8 shrink-0 items-center justify-center rounded-full border text-sm transition ${
                     isOpen
                       ? 'border-crimson-500 bg-crimson-500 text-white'
-                      : 'border-white/20 text-slate-400'
+                      : 'border-white/20 text-slate-300'
                   }`}
                 >
                   {String(i + 1).padStart(2, '0')}
@@ -43,7 +43,7 @@ export function Faq() {
                 </span>
               </button>
               {isOpen && (
-                <p className="border-t border-dashed border-white/10 px-5 py-5 text-sm leading-relaxed text-slate-300 sm:px-6 sm:pl-[4.5rem]">
+                <p className="border-t border-dashed border-white/10 px-5 py-5 text-sm leading-relaxed text-slate-200 sm:px-6 sm:pl-[4.5rem]">
                   {f.a}
                 </p>
               )}
@@ -55,7 +55,7 @@ export function Faq() {
       <div className="mt-10 flex flex-col items-center justify-between gap-5 rounded-2xl border border-crimson-500/30 bg-crimson-500/[0.07] p-7 text-center sm:flex-row sm:text-left">
         <div>
           <h3 className="display text-2xl text-white">Still have a question?</h3>
-          <p className="mt-1 text-sm text-slate-300">
+          <p className="mt-1 text-sm text-slate-200">
             The organising team answers on {event.phone} and {event.email}.
           </p>
         </div>

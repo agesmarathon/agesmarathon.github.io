@@ -25,14 +25,14 @@ export function Schedule() {
               </span>
               <div className="mt-3 sm:mt-0">
                 <h3 className="font-semibold text-white">{s.title}</h3>
-                <p className="mt-1 text-sm text-slate-400">{s.note}</p>
+                <p className="mt-1 text-sm text-slate-300">{s.note}</p>
               </div>
             </div>
           </li>
         ))}
       </ol>
 
-      <p className="mt-6 pl-10 text-xs uppercase tracking-widest text-slate-500 sm:pl-16">
+      <p className="mt-6 pl-10 text-xs uppercase tracking-widest text-slate-400 sm:pl-16">
         Finish line · Garib-E-Newaz High School
       </p>
     </Section>

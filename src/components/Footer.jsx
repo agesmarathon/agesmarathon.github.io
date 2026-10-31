@@ -19,12 +19,12 @@ export function Footer() {
               />
               <div>
                 <div className="display text-2xl text-white">
-                  <span className="text-crimson-400">AGES</span> Marathon
+                  <span className="glow-red text-crimson-400">AGES</span> Marathon
                 </div>
-                <div className="text-xs uppercase tracking-widest text-slate-500">{event.motto}</div>
+                <div className="text-xs uppercase tracking-widest text-slate-400">{event.motto}</div>
               </div>
             </div>
-            <p className="mt-5 text-sm leading-relaxed text-slate-400">
+            <p className="mt-5 text-sm leading-relaxed text-slate-300">
               {event.dateLabel} · {event.venue}, {event.venueAddress}. Organised by {event.organizer} on behalf of the{' '}
               {event.organizerFor}.
             </p>
@@ -38,11 +38,11 @@ export function Footer() {
 
           <div className="grid grid-cols-2 gap-10 text-sm">
             <div>
-              <h4 className="mb-4 flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-slate-500">
+              <h4 className="mb-4 flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-slate-400">
                 <span className="h-px w-4 bg-crimson-500/60" />
                 Event
               </h4>
-              <ul className="space-y-2 text-slate-300">
+              <ul className="space-y-2 text-slate-200">
                 <li><a href="#about" className="transition hover:text-crimson-400">About</a></li>
                 <li><a href="#categories" className="transition hover:text-crimson-400">Categories</a></li>
                 <li><a href="#schedule" className="transition hover:text-crimson-400">Schedule</a></li>
@@ -52,11 +52,11 @@ export function Footer() {
               </ul>
             </div>
             <div className="min-w-0">
-              <h4 className="mb-4 flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-slate-500">
+              <h4 className="mb-4 flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-slate-400">
                 <span className="h-px w-4 bg-crimson-500/60" />
                 Contact
               </h4>
-              <ul className="space-y-2 text-slate-300">
+              <ul className="space-y-2 text-slate-200">
                 <li>
                   <a href={`mailto:${event.email}`} className="break-all transition hover:text-crimson-400">
                     {event.email}
@@ -82,7 +82,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-dashed border-white/10 pt-6 text-xs text-slate-500 sm:flex-row">
+        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-dashed border-white/10 pt-6 text-xs text-slate-400 sm:flex-row">
           <span>© {new Date().getFullYear()} {event.organizerFor}. All rights reserved.</span>
           <a href="#top" className="transition hover:text-crimson-400">Back to top ↑</a>
         </div>

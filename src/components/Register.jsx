@@ -75,7 +75,7 @@ export function Register() {
               <span className="text-xs">★</span>
               <span className="h-px w-12 bg-crimson-500/40" />
             </div>
-            <p className="mx-auto mt-5 max-w-2xl text-slate-300">
+            <p className="mx-auto mt-5 max-w-2xl text-slate-200">
               Registration closes on {event.registrationCloses} or once slots run out — whichever comes first.
             </p>
           </div>
@@ -93,7 +93,7 @@ export function Register() {
                     {s.n}
                   </div>
                   <h3 className="mt-4 font-semibold text-white">{s.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-400">{s.text}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-300">{s.text}</p>
                 </div>
               ))}
             </div>
@@ -142,7 +142,7 @@ export function Register() {
                   />
                   <div>
                     <p className="display text-lg leading-none text-white">Official registration form</p>
-                    <p className="mt-1 text-xs text-slate-400">
+                    <p className="mt-1 text-xs text-slate-300">
                       {event.dateLabel} · hosted securely by Google Forms
                     </p>
                   </div>
@@ -160,7 +160,7 @@ export function Register() {
               <div className="p-3 sm:p-5">
                 <div className="relative overflow-hidden rounded-xl bg-white shadow-inner">
                   {!loaded && (
-                    <div className="flex h-[520px] items-center justify-center text-sm text-slate-500">
+                    <div className="flex h-[520px] items-center justify-center text-sm text-slate-400">
                       Loading the registration form…
                     </div>
                   )}
@@ -179,7 +179,7 @@ export function Register() {
                 </div>
               </div>
 
-              <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 border-t border-white/10 px-5 py-4 text-xs text-slate-400">
+              <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 border-t border-white/10 px-5 py-4 text-xs text-slate-300">
                 <span>🔒 Your details go straight to {event.organizer}</span>
                 <span>📧 Google emails you a copy as proof</span>
                 <span>👤 A free Gmail account is needed to upload your photo</span>
@@ -187,7 +187,7 @@ export function Register() {
             </div>
           </div>
 
-          <p className="mx-auto mt-7 max-w-2xl text-center text-sm text-slate-400">
+          <p className="mx-auto mt-7 max-w-2xl text-center text-sm text-slate-300">
             Trouble registering? Write to{' '}
             <a href={`mailto:${event.email}`} className="text-crimson-400 underline underline-offset-4">
               {event.email}

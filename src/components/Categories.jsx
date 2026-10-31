@@ -31,11 +31,11 @@ export function Categories() {
           >
             {/* BIB header strip */}
             <div className="flex items-center justify-between gap-3">
-              <span className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.25em] text-slate-400">
+              <span className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.25em] text-slate-300">
                 <img src={asset("images/logo.jpg")} alt="" className="h-6 w-6 rounded-full object-cover" />
                 AGES Marathon
               </span>
-              <span className="rounded-full border border-white/15 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-slate-300">
+              <span className="rounded-full border border-white/15 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-slate-200">
                 {event.dateLabel}
               </span>
             </div>
@@ -44,7 +44,7 @@ export function Categories() {
             <div className="mt-6 text-center">
               <div className="display text-7xl leading-none text-white sm:text-8xl">{c.distance}</div>
               <h3 className="mt-3 text-lg font-semibold text-crimson-400">{c.name}</h3>
-              <p className="mt-1 text-sm text-slate-400">{c.who}</p>
+              <p className="mt-1 text-sm text-slate-300">{c.who}</p>
             </div>
 
             <div className="mt-6 flex justify-center text-white">
@@ -56,16 +56,16 @@ export function Categories() {
 
             <div className="flex items-center justify-between text-sm">
               <div>
-                <p className="text-[10px] uppercase tracking-widest text-slate-400">Entry fee</p>
+                <p className="text-[10px] uppercase tracking-widest text-slate-300">Entry fee</p>
                 <p className="display text-3xl text-white">{c.fee}</p>
               </div>
               <div className="text-right">
-                <p className="text-[10px] uppercase tracking-widest text-slate-400">Age limit</p>
+                <p className="text-[10px] uppercase tracking-widest text-slate-300">Age limit</p>
                 <p className="font-semibold text-slate-100">{c.age}</p>
               </div>
             </div>
 
-            <ul className="mt-6 flex-1 space-y-2 text-sm text-slate-300">
+            <ul className="mt-6 flex-1 space-y-2 text-sm text-slate-200">
               {c.perks.map((p) => (
                 <li key={p} className="flex gap-2">
                   <span className="text-crimson-400">✓</span>
@@ -84,7 +84,7 @@ export function Categories() {
         ))}
       </div>
 
-      <p className="mt-7 flex flex-wrap items-center gap-x-2 text-sm text-slate-400">
+      <p className="mt-7 flex flex-wrap items-center gap-x-2 text-sm text-slate-300">
         <span className="text-crimson-400">★</span>
         Entry fee is {payment.fee} for every participant, paid by {payment.method}. Certificates are not issued for
         this event.

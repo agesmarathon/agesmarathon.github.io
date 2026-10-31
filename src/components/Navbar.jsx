@@ -31,14 +31,14 @@ export function Navbar() {
         <a href="#top" className="flex items-center gap-3">
           <img src={asset("images/logo.jpg")} alt="AGES logo" className="h-11 w-11 rounded-full object-cover ring-2 ring-crimson-500/60" />
           <span className="display text-xl leading-none text-white">
-            <span className="text-crimson-400">AGES</span> Marathon
+            <span className="glow-red text-crimson-400">AGES</span> Marathon
           </span>
         </a>
 
         <ul className="hidden items-center gap-8 md:flex">
           {links.map((l) => (
             <li key={l.href}>
-              <a href={l.href} className="text-sm font-medium text-slate-200 transition hover:text-crimson-400">
+              <a href={l.href} className="text-sm font-medium text-slate-100 transition hover:text-crimson-400">
                 {l.label}
               </a>
             </li>
@@ -70,7 +70,7 @@ export function Navbar() {
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="block border-b border-white/5 py-3 text-slate-200"
+              className="block border-b border-white/5 py-3 text-slate-100"
             >
               {l.label}
             </a>

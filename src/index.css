@@ -33,6 +33,18 @@ body {
   letter-spacing: 0.01em;
   text-transform: uppercase;
   line-height: 0.95;
+  /* a soft halo so headings lift off the deep green rather than sink into it */
+  text-shadow: 0 0 34px rgba(255, 255, 255, 0.12);
+}
+
+/* warm halo for the red wordmark and figures */
+.glow-red {
+  text-shadow: 0 0 26px rgba(216, 31, 54, 0.55);
+}
+
+/* body copy gets a hair of weight on dark backgrounds */
+p {
+  text-wrap: pretty;
 }
 
 /* soft entrance animation used by the reveal hook */
