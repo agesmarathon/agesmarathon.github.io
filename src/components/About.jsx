@@ -32,10 +32,21 @@ export function About() {
         </span>
         <span className="absolute bottom-10 left-0 top-2 w-px bg-gradient-to-b from-crimson-500/70 via-crimson-500/25 to-transparent" />
 
-        <blockquote className="quote-type space-y-4 text-2xl leading-[1.3] text-slate-100 sm:text-4xl sm:leading-[1.25]">
-          {event.quote.lines.map((line) => (
-            <p key={line}>{line}</p>
-          ))}
+        <blockquote className="quote-type text-slate-200">
+          {event.quote.lines.map((line) =>
+            line.feature ? (
+              <p
+                key={line.text}
+                className="my-6 text-3xl italic leading-[1.15] text-white sm:my-8 sm:text-5xl"
+              >
+                {line.text}
+              </p>
+            ) : (
+              <p key={line.text} className="text-xl leading-[1.45] sm:text-2xl">
+                {line.text}
+              </p>
+            ),
+          )}
         </blockquote>
 
         <figcaption className="mt-7 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs uppercase tracking-[0.18em] text-slate-300 sm:tracking-[0.3em]">
