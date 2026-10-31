@@ -6,6 +6,7 @@ import { Schedule } from './components/Schedule'
 import { Venue } from './components/Venue'
 import { Register } from './components/Register'
 import { Organizers } from './components/Organizers'
+import { Gallery } from './components/Gallery'
 import { Faq } from './components/Faq'
 import { Footer } from './components/Footer'
 import { event } from './data/event'
@@ -25,6 +26,7 @@ export default function App() {
         <Venue />
         <Register />
         <Organizers />
+        <Gallery />
         <Faq />
       </main>
       <Footer />

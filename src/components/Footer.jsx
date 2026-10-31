@@ -47,6 +47,7 @@ export function Footer() {
                 <li><a href="#categories" className="transition hover:text-gold-400">Categories</a></li>
                 <li><a href="#schedule" className="transition hover:text-gold-400">Schedule</a></li>
                 <li><a href="#venue" className="transition hover:text-gold-400">Venue</a></li>
+                <li><a href="#gallery" className="transition hover:text-gold-400">Gallery</a></li>
                 <li><a href="#faq" className="transition hover:text-gold-400">FAQ</a></li>
               </ul>
             </div>

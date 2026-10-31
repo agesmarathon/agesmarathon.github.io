@@ -6,6 +6,7 @@ const links = [
   { href: '#categories', label: 'Categories' },
   { href: '#schedule', label: 'Schedule' },
   { href: '#venue', label: 'Venue' },
+  { href: '#gallery', label: 'Gallery' },
   { href: '#faq', label: 'FAQ' },
 ]
 

@@ -107,3 +107,23 @@ export const faqs = [
     a: 'Yes. The full route is marshalled by volunteers, with water points along the way, an ambulance on standby and a medical team at the finish line.',
   },
 ]
+
+// Photos of AGES members at runs around Chattogram.
+// Drop new files in public/images/ and add a line here.
+export const gallery = [
+  {
+    src: 'images/gallery-2.jpg',
+    caption: 'World Stroke Day Marathon',
+    note: 'AGES members with their finisher medals',
+  },
+  {
+    src: 'images/gallery-1.jpg',
+    caption: 'Medals all round',
+    note: 'After the finish line, Chattogram',
+  },
+  {
+    src: 'images/gallery-3.jpg',
+    caption: 'CR 10K 2026',
+    note: 'Alumni on the start line together',
+  },
+]
