@@ -17,6 +17,7 @@ export const event = {
   venueAddress: 'Halishahar Housing Estate, Chattogram, Bangladesh',
   mapsUrl: 'https://maps.google.com/?q=Garib-E-Newaz+High+School+Halishahar+Housing+Estate+Chattogram',
   organizer: 'Team SAF',
+  organizerTagline: 'We turn visions into visuals and moments into stories.',
   organizerFor: 'Association of GNHS Ex-Students (AGES)',
   organizerForLong:
     'the official alumni organization of Garib-E-Newaz High School, Halishahar Housing Estate, Chattogram',
@@ -25,6 +26,17 @@ export const event = {
   facebook: 'https://facebook.com/',
   registrationCloses: '10 December 2026',
   founded: '30 September 2023',
+
+  // The passage shown in the quote band between the gallery and the FAQ.
+  // `text` is set large; lead and closer frame it in smaller type.
+  quote: {
+    lead: 'We turn visions into visuals and moments into stories.',
+    text: 'One school. One road. Every batch.',
+    closer:
+      'On the sixteenth of December, the story is ours to run — and every step on that road is a thank-you to the school that made us.',
+    author: 'Team SAF',
+    authorNote: 'on behalf of AGES',
+  },
 
   // Google Form used for registration. Paste the "viewform" link here;
   // the site builds the embed version from it automatically.
