@@ -1,5 +1,18 @@
-import { categories, payment } from '../data/event'
+import { categories, payment, event } from '../data/event'
 import { Section } from './Section'
+
+// thin varying bars, like the barcode printed on a real race BIB
+const barcode = [2, 1, 3, 1, 1, 2, 4, 1, 2, 1, 3, 2, 1, 1, 2, 3, 1, 2, 1, 4, 2, 1, 1, 3]
+
+function Barcode() {
+  return (
+    <div className="flex h-6 items-end gap-[3px] opacity-40">
+      {barcode.map((w, i) => (
+        <span key={i} className="block h-full bg-current" style={{ width: `${w}px` }} />
+      ))}
+    </div>
+  )
+}
 
 export function Categories() {
   return (
@@ -9,31 +22,53 @@ export function Categories() {
       title="Two distances, one finish line"
       subtitle="Your distance follows the gender you select on the registration form — there is nothing extra to choose. Open to every age."
     >
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-7 md:grid-cols-2">
         {categories.map((c) => (
           <div
             key={c.id}
-            className={`relative flex flex-col rounded-3xl border p-8 transition hover:-translate-y-1 ${
+            className={`group relative flex flex-col rounded-3xl border p-7 transition hover:-translate-y-1 ${
               c.featured
                 ? 'border-gold-500/60 bg-gradient-to-b from-gold-500/15 to-white/[0.03] shadow-xl shadow-gold-600/10'
                 : 'border-white/10 bg-white/[0.04] hover:border-white/25'
             }`}
           >
-            <div className="display text-6xl text-white">{c.distance}</div>
-            <h3 className="mt-2 text-lg font-semibold text-gold-400">{c.name}</h3>
-            <p className="mt-1 text-sm text-slate-400">{c.who}</p>
-
-            <div className="mt-6 flex items-baseline gap-2">
-              <span className="display text-4xl text-white">{c.fee}</span>
-              <span className="text-xs uppercase tracking-widest text-slate-400">entry fee</span>
+            {/* BIB header strip */}
+            <div className="flex items-center justify-between gap-3">
+              <span className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.25em] text-slate-400">
+                <img src="/images/logo.jpg" alt="" className="h-6 w-6 rounded-full object-cover" />
+                AGES Marathon
+              </span>
+              <span className="rounded-full border border-white/15 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-slate-300">
+                {event.dateLabel}
+              </span>
             </div>
 
-            <div className="mt-6 flex justify-between border-y border-white/10 py-4 text-sm">
-              <span className="text-slate-400">Age limit</span>
-              <span className="font-medium text-slate-100">{c.age}</span>
+            {/* the distance, printed like a BIB number */}
+            <div className="mt-6 text-center">
+              <div className="display text-7xl leading-none text-white sm:text-8xl">{c.distance}</div>
+              <h3 className="mt-3 text-lg font-semibold text-gold-400">{c.name}</h3>
+              <p className="mt-1 text-sm text-slate-400">{c.who}</p>
             </div>
 
-            <ul className="mt-5 flex-1 space-y-2 text-sm text-slate-300">
+            <div className="mt-6 flex justify-center text-white">
+              <Barcode />
+            </div>
+
+            {/* punched divider */}
+            <div className="ticket-notch relative my-6 border-t border-dashed border-white/20" />
+
+            <div className="flex items-center justify-between text-sm">
+              <div>
+                <p className="text-[10px] uppercase tracking-widest text-slate-400">Entry fee</p>
+                <p className="display text-3xl text-white">{c.fee}</p>
+              </div>
+              <div className="text-right">
+                <p className="text-[10px] uppercase tracking-widest text-slate-400">Age limit</p>
+                <p className="font-semibold text-slate-100">{c.age}</p>
+              </div>
+            </div>
+
+            <ul className="mt-6 flex-1 space-y-2 text-sm text-slate-300">
               {c.perks.map((p) => (
                 <li key={p} className="flex gap-2">
                   <span className="text-gold-500">✓</span>
@@ -56,7 +91,8 @@ export function Categories() {
         ))}
       </div>
 
-      <p className="mt-6 text-sm text-slate-400">
+      <p className="mt-7 flex flex-wrap items-center gap-x-2 text-sm text-slate-400">
+        <span className="text-gold-500">★</span>
         Entry fee is {payment.fee} for every participant, paid by {payment.method}. Certificates are not issued for
         this event.
       </p>

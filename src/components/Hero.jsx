@@ -1,6 +1,12 @@
 import { event } from '../data/event'
 import { Countdown } from './Countdown'
 
+const facts = [
+  { icon: '📅', text: event.dateLabel },
+  { icon: '⏱', text: event.timeLabel },
+  { icon: '📍', text: event.city },
+]
+
 export function Hero() {
   return (
     <section id="top" className="relative flex min-h-screen items-center overflow-hidden">
@@ -11,33 +17,53 @@ export function Hero() {
       />
       <div className="absolute inset-0 bg-gradient-to-br from-navy-950 via-navy-950/85 to-navy-900/60" />
       <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-navy-950/70" />
+      <div className="stripes absolute inset-0" />
 
-      <div className="relative mx-auto w-full max-w-6xl px-5 pt-28 pb-16">
+      {/* date stamp running up the left edge, desktop only */}
+      <div className="absolute left-6 top-1/2 hidden -translate-y-1/2 lg:block">
+        <span className="display block -rotate-90 whitespace-nowrap text-sm tracking-[0.4em] text-white/35">
+          16 · 12 · 2026
+        </span>
+      </div>
+
+      <div className="relative mx-auto w-full max-w-6xl px-5 pt-28 pb-24">
         <span className="inline-flex items-center gap-2 rounded-full border border-gold-500/40 bg-gold-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-gold-400">
+          <span className="h-1.5 w-1.5 rounded-full bg-gold-500" />
           {event.motto}
         </span>
 
-        <h1 className="display mt-6 text-6xl leading-[0.9] text-white sm:text-8xl lg:text-[7.5rem]">
-          AGES
-          <br />
-          <span className="text-gold-500">Marathon</span>{' '}
-          <span className="text-white/90">{event.year}</span>
-        </h1>
+        {/* gold rule beside the headline */}
+        <div className="mt-6 flex gap-5">
+          <span className="mt-2 hidden w-1 shrink-0 rounded-full bg-gradient-to-b from-gold-500 to-transparent sm:block" />
+          <h1 className="display text-6xl leading-[0.9] text-white sm:text-8xl lg:text-[7.5rem]">
+            AGES
+            <br />
+            <span className="text-gold-500">Marathon</span>{' '}
+            <span className="text-white/90">{event.year}</span>
+          </h1>
+        </div>
 
         <p className="mt-5 max-w-xl text-lg font-medium text-slate-200">{event.tagline}</p>
 
-        <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-300">
-          <span>📅 {event.dateLabel}</span>
-          <span>⏱ {event.timeLabel}</span>
-          <span>📍 {event.city}</span>
+        <div className="mt-7 flex flex-wrap gap-3">
+          {facts.map((f) => (
+            <span
+              key={f.text}
+              className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-4 py-2 text-sm text-slate-200 backdrop-blur"
+            >
+              <span>{f.icon}</span>
+              {f.text}
+            </span>
+          ))}
         </div>
 
         <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
           <a
             href="#register"
-            className="rounded-full bg-gold-500 px-8 py-4 text-center text-base font-bold text-navy-950 shadow-xl shadow-gold-600/20 transition hover:-translate-y-0.5 hover:bg-gold-400"
+            className="group rounded-full bg-gold-500 px-8 py-4 text-center text-base font-bold text-navy-950 shadow-xl shadow-gold-600/20 transition hover:-translate-y-0.5 hover:bg-gold-400"
           >
             Register Free Online
+            <span className="ml-2 inline-block transition-transform group-hover:translate-x-1">→</span>
           </a>
           <a
             href="#categories"
@@ -48,7 +74,8 @@ export function Hero() {
         </div>
 
         <div className="mt-14">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">
+          <p className="mb-3 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">
+            <span className="h-px w-6 bg-gold-500/50" />
             Flag-off countdown
           </p>
           <Countdown dateISO={event.dateISO} />
@@ -58,6 +85,15 @@ export function Hero() {
           Organized by {event.organizer} · on behalf of {event.organizerFor}
         </p>
       </div>
+
+      {/* scroll cue */}
+      <a
+        href="#about"
+        className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-white/50 transition hover:text-gold-400 sm:flex"
+      >
+        Scroll
+        <span className="animate-bounce text-base">↓</span>
+      </a>
     </section>
   )
 }
