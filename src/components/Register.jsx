@@ -53,6 +53,11 @@ function CopyButton({ value }) {
   )
 }
 
+const daysToGo = Math.max(
+  0,
+  Math.ceil((new Date(event.dateISO) - Date.now()) / 86400000),
+)
+
 export function Register() {
   const ref = useReveal()
 
@@ -151,14 +156,19 @@ export function Register() {
                     </p>
                   </div>
                 </div>
-                <a
-                  href={event.formUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="rounded-full bg-crimson-500 px-5 py-2.5 text-sm font-bold text-white transition hover:bg-crimson-400"
-                >
-                  Open in a new tab ↗
-                </a>
+                {/* a live status rather than a second copy of the button below */}
+                <div className="flex items-center gap-3 rounded-full border border-crimson-500/35 bg-crimson-500/10 py-2 pl-3 pr-5">
+                  <span className="relative flex h-2.5 w-2.5">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-crimson-400 opacity-75" />
+                    <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-crimson-500" />
+                  </span>
+                  <span>
+                    <span className="block text-xs font-bold uppercase tracking-[0.2em] text-crimson-400">
+                      Registration open
+                    </span>
+                    <span className="block text-xs text-slate-300">{daysToGo} days to race day</span>
+                  </span>
+                </div>
               </div>
 
               <div className="grid gap-6 p-6 sm:p-8 md:grid-cols-[1.3fr_1fr] md:items-center">
