@@ -185,7 +185,7 @@ export function Register() {
                     href={event.formUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="mt-5 block rounded-full bg-crimson-500 px-6 py-4 text-base font-bold text-white shadow-xl shadow-crimson-600/25 transition hover:-translate-y-0.5 hover:bg-crimson-400"
+                    className="btn-shine mt-5 block rounded-full bg-crimson-500 px-6 py-4 text-base font-bold text-white shadow-xl shadow-crimson-600/25 transition hover:-translate-y-0.5 hover:bg-crimson-400"
                   >
                     Open the registration form ↗
                   </a>

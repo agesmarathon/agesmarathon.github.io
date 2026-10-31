@@ -76,7 +76,7 @@ export function Categories() {
 
             <a
               href="#form"
-              className="mt-7 rounded-full bg-crimson-500 py-3 text-center text-sm font-bold text-white transition hover:bg-crimson-400" 
+              className="btn-shine mt-7 rounded-full bg-crimson-500 py-3 text-center text-sm font-bold text-white transition hover:bg-crimson-400" 
             >
               Register for {c.distance}
             </a>

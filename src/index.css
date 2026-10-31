@@ -46,6 +46,30 @@ body {
   text-wrap: balance;
 }
 
+/* a light sweeps across the primary buttons on hover */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.btn-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.32) 50%,
+    transparent 70%
+  );
+  transform: translateX(-130%);
+  transition: transform 0.75s ease;
+  pointer-events: none;
+}
+.btn-shine:hover::after {
+  transform: translateX(130%);
+}
+
 /* warm halo for the red wordmark and figures */
 .glow-red {
   text-shadow: 0 0 26px rgba(216, 31, 54, 0.55);
@@ -70,6 +94,7 @@ p {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
+  .btn-shine::after { display: none; }
 }
 
 /* ── decorative helpers used by the Register section ───────────── */

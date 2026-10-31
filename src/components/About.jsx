@@ -33,20 +33,31 @@ export function About() {
         <span className="absolute bottom-10 left-0 top-2 w-px bg-gradient-to-b from-crimson-500/70 via-crimson-500/25 to-transparent" />
 
         <blockquote className="quote-type text-slate-200">
-          {event.quote.lines.map((line) =>
-            line.feature ? (
+          {event.quote.lines.map((line) => {
+            if (!line.feature) {
+              return (
+                <p key={line.text} className="text-2xl leading-[1.4] sm:text-3xl">
+                  {line.text}
+                </p>
+              )
+            }
+
+            // split the feature line so the highlighted words can go red
+            const [before, after] = line.highlight
+              ? line.text.split(line.highlight)
+              : [line.text, '']
+
+            return (
               <p
                 key={line.text}
-                className="my-6 text-3xl italic leading-[1.15] text-white sm:my-8 sm:text-5xl"
+                className="my-7 text-4xl italic leading-[1.15] text-white sm:my-9 sm:text-6xl"
               >
-                {line.text}
+                {before}
+                {line.highlight && <span className="glow-red text-crimson-400">{line.highlight}</span>}
+                {after}
               </p>
-            ) : (
-              <p key={line.text} className="text-xl leading-[1.45] sm:text-2xl">
-                {line.text}
-              </p>
-            ),
-          )}
+            )
+          })}
         </blockquote>
 
         <figcaption className="mt-7 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs uppercase tracking-[0.18em] text-slate-300 sm:tracking-[0.3em]">

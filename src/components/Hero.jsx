@@ -60,7 +60,7 @@ export function Hero() {
         <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
           <a
             href="#form"
-            className="group rounded-full bg-crimson-500 px-8 py-4 text-center text-base font-bold text-white shadow-xl shadow-crimson-600/20 transition hover:-translate-y-0.5 hover:bg-crimson-400"
+            className="btn-shine group rounded-full bg-crimson-500 px-8 py-4 text-center text-base font-bold text-white shadow-xl shadow-crimson-600/20 transition hover:-translate-y-0.5 hover:bg-crimson-400"
           >
             Register Free Online
             <span className="ml-2 inline-block transition-transform group-hover:translate-x-1">→</span>
