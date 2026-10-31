@@ -34,7 +34,7 @@ export const event = {
       { text: 'We turn visions into visuals and moments into stories.' },
       { text: 'One school — One road — Every batch.', feature: true },
       {
-        text: 'On the sixteenth of December, the story is ours to run — and every step on that road is a thank-you to the school that made us.',
+        text: 'On the 16th of December, the story is ours to run — and every step on that road is a thank-you to the school that made us.',
       },
     ],
     author: 'Team SAF',
