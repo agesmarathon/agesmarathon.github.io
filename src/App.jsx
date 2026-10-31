@@ -1,0 +1,38 @@
+import { Navbar } from './components/Navbar'
+import { Hero } from './components/Hero'
+import { About } from './components/About'
+import { Categories } from './components/Categories'
+import { Schedule } from './components/Schedule'
+import { Venue } from './components/Venue'
+import { Register } from './components/Register'
+import { Organizers } from './components/Organizers'
+import { Faq } from './components/Faq'
+import { Footer } from './components/Footer'
+import { event } from './data/event'
+
+export default function App() {
+  return (
+    <>
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <Categories />
+        <Schedule />
+        <Venue />
+        <Register />
+        <Organizers />
+        <Faq />
+      </main>
+      <Footer />
+
+      {/* sticky mobile call-to-action */}
+      <a
+        href="#register"
+        className="fixed inset-x-4 bottom-4 z-40 rounded-full bg-gold-500 py-3.5 text-center font-bold text-navy-950 shadow-2xl shadow-black/50 md:hidden"
+      >
+        Register for {event.name}
+      </a>
+    </>
+  )
+}
