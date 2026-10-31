@@ -39,7 +39,9 @@ export function Organizers() {
             </p>
             <p className="flex items-center gap-3 text-slate-300">
               <span className="text-gold-500">☎</span>
-              {event.phone}
+              <a href={`tel:${event.phone.replace(/[^+\d]/g, '')}`} className="text-gold-400 underline underline-offset-4">
+                {event.phone}
+              </a>
             </p>
           </div>
 

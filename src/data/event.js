@@ -20,8 +20,8 @@ export const event = {
   organizerFor: 'Association of GNHS Ex-Students (AGES)',
   organizerForLong:
     'the official alumni organization of Garib-E-Newaz High School, Halishahar Housing Estate, Chattogram',
-  email: 'agesmarathon@example.com',
-  phone: '+880 1XXX-XXXXXX',
+  email: 'ages.teamsaf@gmail.com',
+  phone: '+880 1711-160396',
   facebook: 'https://facebook.com/',
   registrationCloses: '10 December 2026',
   founded: '30 September 2023',

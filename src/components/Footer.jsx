@@ -61,7 +61,11 @@ export function Footer() {
                     {event.email}
                   </a>
                 </li>
-                <li>{event.phone}</li>
+                <li>
+                  <a href={`tel:${event.phone.replace(/[^+\d]/g, '')}`} className="transition hover:text-gold-400">
+                    {event.phone}
+                  </a>
+                </li>
                 <li>
                   <a href={event.facebook} target="_blank" rel="noreferrer" className="transition hover:text-gold-400">
                     Facebook ↗
