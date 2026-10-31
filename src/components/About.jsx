@@ -22,20 +22,29 @@ const pillars = [
 export function About() {
   return (
     <Section id="about" eyebrow="About the event">
-      {/* one passage, three lines — same type throughout so it reads as a whole */}
-      <blockquote className="max-w-4xl space-y-3">
-        {event.quote.lines.map((line) => (
-          <p key={line} className="text-xl font-medium leading-snug text-white sm:text-3xl">
-            {line}
-          </p>
-        ))}
+      {/* a pull quote: serif voice, red rule, one passage of three lines */}
+      <figure className="relative mt-10 max-w-4xl pl-8 sm:pl-14">
+        <span
+          aria-hidden="true"
+          className="quote-type pointer-events-none absolute -top-6 left-0 select-none text-[7rem] leading-none text-crimson-500/25 sm:-top-8 sm:text-[9rem]"
+        >
+          &ldquo;
+        </span>
+        <span className="absolute bottom-10 left-0 top-2 w-px bg-gradient-to-b from-crimson-500/70 via-crimson-500/25 to-transparent" />
 
-        <footer className="pt-4 text-xs uppercase tracking-[0.25em] text-slate-400">
+        <blockquote className="quote-type space-y-4 text-2xl leading-[1.3] text-slate-100 sm:text-4xl sm:leading-[1.25]">
+          {event.quote.lines.map((line) => (
+            <p key={line}>{line}</p>
+          ))}
+        </blockquote>
+
+        <figcaption className="mt-7 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs uppercase tracking-[0.18em] text-slate-300 sm:tracking-[0.3em]">
+          <span className="h-px w-8 bg-crimson-500/60" />
           {event.quote.author}
-          <span className="text-slate-400"> · </span>
+          <span className="text-slate-400">·</span>
           {event.quote.authorNote}
-        </footer>
-      </blockquote>
+        </figcaption>
+      </figure>
 
       {/* who AGES is, for anyone landing here for the first time */}
       <p className="mt-10 max-w-3xl border-l-2 border-crimson-500/50 pl-5 text-lg leading-relaxed text-slate-100">
