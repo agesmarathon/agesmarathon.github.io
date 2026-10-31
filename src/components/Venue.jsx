@@ -1,5 +1,6 @@
 import { event } from '../data/event'
 import { Section } from './Section'
+import { asset } from '../lib/asset'
 
 const rows = [
   { icon: '📅', label: 'Date', value: event.dateLabel },
@@ -16,7 +17,7 @@ export function Venue() {
         <div className="relative">
           <span className="pointer-events-none absolute -bottom-4 -right-4 hidden h-full w-full rounded-3xl border-2 border-gold-500/40 sm:block" />
           <div className="relative overflow-hidden rounded-3xl border border-white/10">
-            <img src="/images/venue.jpg" alt={event.venue} className="h-[420px] w-full object-cover" />
+            <img src={asset("images/venue.jpg")} alt={event.venue} className="h-[420px] w-full object-cover" />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy-950 to-transparent p-5">
               <span className="inline-flex items-center gap-2 rounded-full border border-gold-500/40 bg-navy-950/80 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-gold-400 backdrop-blur">
                 📍 Halishahar, Chattogram

@@ -1,5 +1,6 @@
 import { categories, payment, event } from '../data/event'
 import { Section } from './Section'
+import { asset } from '../lib/asset'
 
 // thin varying bars, like the barcode printed on a real race BIB
 const barcode = [2, 1, 3, 1, 1, 2, 4, 1, 2, 1, 3, 2, 1, 1, 2, 3, 1, 2, 1, 4, 2, 1, 1, 3]
@@ -31,7 +32,7 @@ export function Categories() {
             {/* BIB header strip */}
             <div className="flex items-center justify-between gap-3">
               <span className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.25em] text-slate-400">
-                <img src="/images/logo.jpg" alt="" className="h-6 w-6 rounded-full object-cover" />
+                <img src={asset("images/logo.jpg")} alt="" className="h-6 w-6 rounded-full object-cover" />
                 AGES Marathon
               </span>
               <span className="rounded-full border border-white/15 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-slate-300">

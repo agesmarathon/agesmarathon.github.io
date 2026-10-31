@@ -1,5 +1,6 @@
 import { event } from '../data/event'
 import { Countdown } from './Countdown'
+import { asset } from '../lib/asset'
 
 const facts = [
   { icon: '📅', text: event.dateLabel },
@@ -11,7 +12,7 @@ export function Hero() {
   return (
     <section id="top" className="relative flex min-h-screen items-center overflow-hidden">
       <img
-        src="/images/run.jpg"
+        src={asset("images/run.jpg")}
         alt="Runners at a past AGES event"
         className="absolute inset-0 h-full w-full object-cover object-center"
       />

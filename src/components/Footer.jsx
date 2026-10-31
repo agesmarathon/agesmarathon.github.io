@@ -1,5 +1,6 @@
 import { event } from '../data/event'
 import { Band } from './Band'
+import { asset } from '../lib/asset'
 
 export function Footer() {
   return (
@@ -12,7 +13,7 @@ export function Footer() {
           <div className="max-w-sm">
             <div className="flex items-center gap-3">
               <img
-                src="/images/logo.jpg"
+                src={asset("images/logo.jpg")}
                 alt="AGES logo"
                 className="h-14 w-14 rounded-full object-cover ring-2 ring-gold-500/60"
               />

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { event, payment } from '../data/event'
 import { useReveal } from '../lib/useReveal'
 import { Band } from './Band'
+import { asset } from '../lib/asset'
 
 // Google Forms serves a stripped-down version of the form at ?embedded=true.
 const embedUrl = `${event.formUrl.split('?')[0]}?embedded=true`
@@ -135,7 +136,7 @@ export function Register() {
               <div className="flex flex-wrap items-center justify-between gap-4 border-b border-white/10 px-5 py-4">
                 <div className="flex items-center gap-3">
                   <img
-                    src="/images/logo.jpg"
+                    src={asset("images/logo.jpg")}
                     alt=""
                     className="h-10 w-10 rounded-full object-cover ring-2 ring-gold-500/50"
                   />

@@ -99,11 +99,38 @@ Nothing in this project needs environment variables or a server.
 
 ---
 
+## 4b. Or host it free on GitHub Pages
+
+The repo already contains everything needed — you only flip Pages on once.
+
+1. In your repo on github.com: **Settings → Pages → Build and deployment →
+   Source** → choose **GitHub Actions** (not "Deploy from a branch").
+2. Push to `main`. The workflow in `.github/workflows/deploy.yml` builds the
+   site and publishes it.
+3. Watch it run under the repo's **Actions** tab. When it finishes, the site is at
+   **https://farhanamin068.github.io/AGES-marathon/**
+
+**Why the extra base path.** GitHub Pages serves a project site from
+`/<repo-name>/`, not from `/`. The workflow sets `GITHUB_PAGES=true`, and
+`vite.config.js` then builds with `base: '/AGES-marathon/'`. Files in `public/`
+are referenced through the `asset()` helper in `src/lib/asset.js` for the same
+reason — never hard-code `src="/images/..."`, or the pictures will 404 on Pages.
+
+If you rename the repository, change the `base` string in `vite.config.js` to
+match the new name.
+
+**Pages vs Vercel.** Both can run at once from the same repo; each push deploys
+to both. Vercel gives a shorter URL and faster builds, Pages is handy as a
+backup. Nothing in the code has to change to keep both working.
+
 ## 5. Project structure
 
 ```
+.github/workflows/     ← GitHub Pages deploy workflow
 src/
   data/event.js        ← all editable content
+  lib/asset.js         ← builds image URLs that work on any host
+  lib/useAnchorScroll.js ← smooth scrolling for #links
   lib/useReveal.js     ← scroll-in animation hook
   components/
     Navbar.jsx  Hero.jsx  Countdown.jsx  About.jsx  Categories.jsx

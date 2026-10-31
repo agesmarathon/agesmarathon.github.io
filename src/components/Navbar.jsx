@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { asset } from '../lib/asset'
 
 const links = [
   { href: '#about', label: 'About' },
@@ -27,7 +28,7 @@ export function Navbar() {
     >
       <nav className="mx-auto flex h-20 w-full max-w-6xl items-center justify-between px-5">
         <a href="#top" className="flex items-center gap-3">
-          <img src="/images/logo.jpg" alt="AGES logo" className="h-11 w-11 rounded-full object-cover ring-2 ring-gold-500/60" />
+          <img src={asset("images/logo.jpg")} alt="AGES logo" className="h-11 w-11 rounded-full object-cover ring-2 ring-gold-500/60" />
           <span className="display text-xl leading-none text-white">
             AGES <span className="text-gold-500">Marathon</span>
           </span>

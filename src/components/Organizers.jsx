@@ -1,5 +1,6 @@
 import { event } from '../data/event'
 import { Section } from './Section'
+import { asset } from '../lib/asset'
 
 export function Organizers() {
   return (
@@ -12,7 +13,7 @@ export function Organizers() {
           <span className="pointer-events-none absolute -bottom-1.5 -left-1.5 h-10 w-10 rounded-bl-3xl border-b-2 border-l-2 border-gold-500/70" />
           <span className="pointer-events-none absolute -bottom-1.5 -right-1.5 h-10 w-10 rounded-br-3xl border-b-2 border-r-2 border-gold-500/70" />
           <div className="overflow-hidden rounded-3xl border border-white/10">
-            <img src="/images/banner.jpg" alt="AGES Marathon organising committee" className="w-full object-cover" />
+            <img src={asset("images/banner.jpg")} alt="AGES Marathon organising committee" className="w-full object-cover" />
           </div>
         </div>
 
