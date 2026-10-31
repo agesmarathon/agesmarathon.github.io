@@ -78,7 +78,7 @@ export function Categories() {
             </ul>
 
             <a
-              href="#register"
+              href="#form"
               className={`mt-7 rounded-full py-3 text-center text-sm font-bold transition ${
                 c.featured
                   ? 'bg-gold-500 text-navy-950 hover:bg-gold-400'

@@ -28,7 +28,7 @@ export function Footer() {
               {event.organizerFor}.
             </p>
             <a
-              href="#register"
+              href="#form"
               className="mt-6 inline-block rounded-full bg-gold-500 px-6 py-2.5 text-sm font-bold text-navy-950 transition hover:bg-gold-400"
             >
               Register now →

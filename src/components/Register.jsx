@@ -51,11 +51,16 @@ export function Register() {
   const ref = useReveal()
   const [loaded, setLoaded] = useState(false)
 
+  // The section must NOT clip its overflow: with overflow-hidden the browser
+  // scrolls this box instead of the page when a #form link is clicked, so the
+  // decorative layers get their own clipped wrapper below.
   return (
-    <section id="register" className="relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-navy-900 via-navy-950 to-navy-950" />
-      <div className="stripes absolute inset-0" />
-      <div className="absolute -top-44 left-1/2 h-96 w-[46rem] -translate-x-1/2 rounded-full bg-gold-500/10 blur-3xl" />
+    <section id="register" className="relative">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-navy-900 via-navy-950 to-navy-950" />
+        <div className="stripes absolute inset-0" />
+        <div className="absolute -top-44 left-1/2 h-96 w-[46rem] -translate-x-1/2 rounded-full bg-gold-500/10 blur-3xl" />
+      </div>
 
       <div className="relative">
         <Band />
@@ -117,8 +122,9 @@ export function Register() {
             </div>
           </div>
 
-          {/* the form itself, framed like an official document */}
-          <div className="relative mt-8">
+          {/* the form itself, framed like an official document.
+              #form is the anchor every "register" button jumps to. */}
+          <div id="form" className="relative mt-8">
             {/* gold corner brackets */}
             <span className="pointer-events-none absolute -left-1 -top-1 h-8 w-8 rounded-tl-2xl border-l-2 border-t-2 border-gold-500/70" />
             <span className="pointer-events-none absolute -right-1 -top-1 h-8 w-8 rounded-tr-2xl border-r-2 border-t-2 border-gold-500/70" />

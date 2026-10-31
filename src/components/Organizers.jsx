@@ -24,7 +24,7 @@ export function Organizers() {
           </p>
           <p className="mt-5 leading-relaxed text-slate-300">
             The Association of GNHS Ex-Students is the official alumni organization of Garib-E-Newaz High School in
-            Halishahar Housing Estate, Chattogram. Since 2022 it has worked to keep every batch connected — through
+            Halishahar Housing Estate, Chattogram. Founded on 30 September 2023, it works to keep every batch connected — through
             welfare drives, school support and events like this one. The marathon is run entirely by volunteers from
             the alumni body.
           </p>
@@ -43,7 +43,7 @@ export function Organizers() {
           </div>
 
           <a
-            href="#register"
+            href="#form"
             className="mt-8 inline-block rounded-full bg-gold-500 px-7 py-3 text-sm font-bold text-navy-950 transition hover:bg-gold-400"
           >
             Join the run →

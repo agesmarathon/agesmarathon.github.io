@@ -24,6 +24,7 @@ export const event = {
   phone: '+880 1XXX-XXXXXX',
   facebook: 'https://facebook.com/',
   registrationCloses: '10 December 2026',
+  founded: '30 September 2023',
 
   // Google Form used for registration. Paste the "viewform" link here;
   // the site builds the embed version from it automatically.
@@ -67,7 +68,7 @@ export const stats = [
   { value: '2', label: 'Race categories' },
   { value: '৳ 699', label: 'Entry fee' },
   { value: '5:30 AM', label: 'Flag-off' },
-  { value: '2022', label: 'AGES established' },
+  { value: 'Sep 2023', label: 'AGES founded' },
 ]
 
 export const schedule = [

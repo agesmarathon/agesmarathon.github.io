@@ -9,8 +9,11 @@ import { Organizers } from './components/Organizers'
 import { Faq } from './components/Faq'
 import { Footer } from './components/Footer'
 import { event } from './data/event'
+import { useAnchorScroll } from './lib/useAnchorScroll'
 
 export default function App() {
+  useAnchorScroll()
+
   return (
     <>
       <Navbar />
@@ -28,7 +31,7 @@ export default function App() {
 
       {/* sticky mobile call-to-action */}
       <a
-        href="#register"
+        href="#form"
         className="fixed inset-x-4 bottom-4 z-40 rounded-full bg-gold-500 py-3.5 text-center font-bold text-navy-950 shadow-2xl shadow-black/50 md:hidden"
       >
         Register for {event.name}

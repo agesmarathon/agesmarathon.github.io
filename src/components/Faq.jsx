@@ -60,7 +60,7 @@ export function Faq() {
           </p>
         </div>
         <a
-          href="#register"
+          href="#form"
           className="shrink-0 rounded-full bg-gold-500 px-7 py-3 text-sm font-bold text-navy-950 transition hover:bg-gold-400"
         >
           Register now →

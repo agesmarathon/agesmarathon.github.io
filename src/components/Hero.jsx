@@ -59,7 +59,7 @@ export function Hero() {
 
         <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
           <a
-            href="#register"
+            href="#form"
             className="group rounded-full bg-gold-500 px-8 py-4 text-center text-base font-bold text-navy-950 shadow-xl shadow-gold-600/20 transition hover:-translate-y-0.5 hover:bg-gold-400"
           >
             Register Free Online
