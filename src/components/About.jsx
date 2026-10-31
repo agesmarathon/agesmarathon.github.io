@@ -24,7 +24,7 @@ export function About() {
     <Section id="about" eyebrow="About the event">
       {/* the event's own words carry this section instead of a plain heading */}
       <blockquote className="max-w-3xl">
-        <p className="text-lg italic leading-relaxed text-slate-200 sm:text-xl">{event.quote.lead}</p>
+        <p className="text-lg italic leading-relaxed text-slate-100">{event.quote.lead}</p>
 
         <p className="display mt-6 text-4xl leading-[1.05] text-white sm:text-6xl">{event.quote.text}</p>
 
@@ -34,7 +34,7 @@ export function About() {
           <span className="h-px w-8 bg-crimson-500/20" />
         </div>
 
-        <p className="mt-6 text-base leading-relaxed text-slate-200 sm:text-lg">{event.quote.closer}</p>
+        <p className="mt-6 max-w-3xl text-lg leading-relaxed text-slate-100">{event.quote.closer}</p>
 
         <footer className="mt-5 text-xs uppercase tracking-[0.25em] text-slate-400">
           {event.quote.author}
@@ -44,7 +44,7 @@ export function About() {
       </blockquote>
 
       {/* who AGES is, for anyone landing here for the first time */}
-      <p className="mt-10 max-w-3xl border-l-2 border-crimson-500/50 pl-5 text-lg font-medium leading-relaxed text-slate-100 sm:text-xl">
+      <p className="mt-10 max-w-3xl border-l-2 border-crimson-500/50 pl-5 text-lg leading-relaxed text-slate-100">
         {event.name} is the flagship run of the {event.organizerFor} — {event.organizerForLong}. Organised by{' '}
         {event.organizer}, it brings alumni, students, teachers and the people of Halishahar together for a cause
         that lasts well past the finish line.

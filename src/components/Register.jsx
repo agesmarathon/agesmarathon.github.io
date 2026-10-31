@@ -4,8 +4,13 @@ import { useReveal } from '../lib/useReveal'
 import { Band } from './Band'
 import { asset } from '../lib/asset'
 
-// Google Forms serves a stripped-down version of the form at ?embedded=true.
-const embedUrl = `${event.formUrl.split('?')[0]}?embedded=true`
+// What the form asks for, so people can have it ready before they open it.
+const checklist = [
+  'Your full name, mobile number and email',
+  'Date of birth, gender and t-shirt size',
+  'A photo of yourself (image, max 1 MB)',
+  `The last 4 digits of your ${payment.method} transaction ID`,
+]
 
 const steps = [
   {
@@ -50,7 +55,6 @@ function CopyButton({ value }) {
 
 export function Register() {
   const ref = useReveal()
-  const [loaded, setLoaded] = useState(false)
 
   // The section must NOT clip its overflow: with overflow-hidden the browser
   // scrolls this box instead of the page when a #form link is clicked, so the
@@ -157,25 +161,37 @@ export function Register() {
                 </a>
               </div>
 
-              <div className="p-3 sm:p-5">
-                <div className="relative overflow-hidden rounded-xl bg-white shadow-inner">
-                  {!loaded && (
-                    <div className="flex h-[520px] items-center justify-center text-sm text-slate-400">
-                      Loading the registration form…
-                    </div>
-                  )}
-                  {/* tune this height if your form gets longer or shorter */}
-                  <iframe
-                    src={embedUrl}
-                    title="AGES Marathon registration form"
-                    onLoad={() => setLoaded(true)}
-                    className={`w-full ${loaded ? 'h-[760px]' : 'h-0'}`}
-                    frameBorder="0"
-                    marginHeight="0"
-                    marginWidth="0"
+              <div className="grid gap-6 p-6 sm:p-8 md:grid-cols-[1.3fr_1fr] md:items-center">
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-[0.25em] text-crimson-400">
+                    Have this ready
+                  </p>
+                  <ul className="mt-4 space-y-2.5">
+                    {checklist.map((c) => (
+                      <li key={c} className="flex gap-3 text-base text-slate-100">
+                        <span className="mt-0.5 text-crimson-400">✓</span>
+                        {c}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="rounded-2xl border border-crimson-500/35 bg-crimson-500/[0.08] p-6 text-center">
+                  <p className="text-xs font-bold uppercase tracking-[0.25em] text-crimson-400">
+                    Registration closes
+                  </p>
+                  <p className="display mt-1 text-3xl leading-tight text-white">{event.registrationCloses}</p>
+                  <a
+                    href={event.formUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-5 block rounded-full bg-crimson-500 px-6 py-4 text-base font-bold text-white shadow-xl shadow-crimson-600/25 transition hover:-translate-y-0.5 hover:bg-crimson-400"
                   >
-                    Loading…
-                  </iframe>
+                    Open the registration form ↗
+                  </a>
+                  <p className="mt-3 text-xs leading-relaxed text-slate-300">
+                    Opens Google Forms in a new tab. It takes about two minutes.
+                  </p>
                 </div>
               </div>
 
