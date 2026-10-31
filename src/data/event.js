@@ -27,13 +27,13 @@ export const event = {
   registrationCloses: '10 December 2026',
   founded: '30 September 2023',
 
-  // The passage shown in the quote band between the gallery and the FAQ.
-  // `text` is set large; lead and closer frame it in smaller type.
+  // The quote that opens the About section: one passage, three lines.
   quote: {
-    lead: 'We turn visions into visuals and moments into stories.',
-    text: 'One school. One road. Every batch.',
-    closer:
+    lines: [
+      'We turn visions into visuals and moments into stories.',
+      'One school. One road. Every batch.',
       'On the sixteenth of December, the story is ours to run — and every step on that road is a thank-you to the school that made us.',
+    ],
     author: 'Team SAF',
     authorNote: 'on behalf of AGES',
   },

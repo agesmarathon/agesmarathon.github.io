@@ -22,21 +22,15 @@ const pillars = [
 export function About() {
   return (
     <Section id="about" eyebrow="About the event">
-      {/* the event's own words carry this section instead of a plain heading */}
-      <blockquote className="max-w-3xl">
-        <p className="text-lg italic leading-relaxed text-slate-100">{event.quote.lead}</p>
+      {/* one passage, three lines — same type throughout so it reads as a whole */}
+      <blockquote className="max-w-4xl space-y-3">
+        {event.quote.lines.map((line) => (
+          <p key={line} className="text-xl font-medium leading-snug text-white sm:text-3xl">
+            {line}
+          </p>
+        ))}
 
-        <p className="display mt-6 text-4xl leading-[1.05] text-white sm:text-6xl">{event.quote.text}</p>
-
-        <div className="mt-6 flex items-center gap-3 text-crimson-400/60">
-          <span className="h-px w-16 bg-crimson-500/40" />
-          <span className="text-xs">★</span>
-          <span className="h-px w-8 bg-crimson-500/20" />
-        </div>
-
-        <p className="mt-6 max-w-3xl text-lg leading-relaxed text-slate-100">{event.quote.closer}</p>
-
-        <footer className="mt-5 text-xs uppercase tracking-[0.25em] text-slate-400">
+        <footer className="pt-4 text-xs uppercase tracking-[0.25em] text-slate-400">
           {event.quote.author}
           <span className="text-slate-400"> · </span>
           {event.quote.authorNote}
