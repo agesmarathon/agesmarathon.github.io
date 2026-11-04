@@ -24,10 +24,10 @@ export default function App() {
         <Hero />
         <About />
         <Categories />
+        <PhotoCard />
         <Schedule />
         <Venue />
         <Register />
-        <PhotoCard />
         <Organizers />
         <Gallery />
         <Faq />

@@ -1,7 +1,7 @@
 import { categories, payment, event } from '../data/event'
 import { Section } from './Section'
 import { asset } from '../lib/asset'
-import { FiCheck } from 'react-icons/fi'
+import { FiCheck, FiArrowUpRight } from 'react-icons/fi'
 
 // thin varying bars, like the barcode printed on a real race BIB
 const barcode = [2, 1, 3, 1, 1, 2, 4, 1, 2, 1, 3, 2, 1, 1, 2, 3, 1, 2, 1, 4, 2, 1, 1, 3]
@@ -76,10 +76,13 @@ export function Categories() {
             </ul>
 
             <a
-              href="#form"
-              className="btn-shine mt-7 rounded-full bg-crimson-500 py-3 text-center text-sm font-bold text-white transition hover:bg-crimson-400" 
+              href={event.formUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="btn-shine mt-7 inline-flex items-center justify-center gap-2 rounded-full bg-crimson-500 py-3 text-center text-sm font-bold text-white transition hover:bg-crimson-400" 
             >
-              Register for {c.distance}
+              <span>Register for {c.distance}</span>
+              <FiArrowUpRight className="text-base" />
             </a>
           </div>
         ))}

@@ -6,9 +6,9 @@ import { FiSun, FiMoon } from 'react-icons/fi'
 const links = [
   { href: '#about', label: 'About' },
   { href: '#categories', label: 'Categories' },
+  { href: '#photocard', label: 'Photo Card' },
   { href: '#schedule', label: 'Schedule' },
   { href: '#venue', label: 'Venue' },
-  { href: '#photocard', label: 'Photo Card' },
   { href: '#gallery', label: 'Gallery' },
   { href: '#faq', label: 'FAQ' },
 ]
