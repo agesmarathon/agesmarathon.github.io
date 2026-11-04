@@ -116,10 +116,10 @@ export function Register() {
             </div>
           </div>
 
-          {/* payment details, styled like a race BIB tear-off */}
+          {/* payment details with bKash QR code, styled like a race BIB tear-off */}
           <div className="ticket-notch relative mt-8 rounded-3xl bg-gradient-to-r from-crimson-500 to-crimson-400 text-white shadow-2xl shadow-crimson-600/20">
-            <div className="grid sm:grid-cols-[1.6fr_1fr]">
-              <div className="p-7 sm:p-9">
+            <div className="grid gap-6 p-6 sm:p-9 md:grid-cols-[1.5fr_auto_1fr] md:items-center">
+              <div>
                 <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-white/80">
                   {payment.accountLabel}
                 </p>
@@ -128,14 +128,33 @@ export function Register() {
                   <CopyButton value={payment.accountNumber} />
                 </div>
                 <p className="mt-3 max-w-md text-sm font-medium text-white/90">{payment.note}</p>
+
+                <div className="mt-6 flex items-baseline gap-3 border-t border-white/20 pt-4">
+                  <div>
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-white/80">Entry fee</p>
+                    <p className="display text-4xl sm:text-5xl leading-none">{payment.fee}</p>
+                  </div>
+                  <span className="text-xs font-semibold uppercase tracking-wider text-white/80">
+                    per participant
+                  </span>
+                </div>
               </div>
 
-              <div className="relative flex flex-col items-center justify-center border-t-2 border-dashed border-forest-950/25 p-7 text-center sm:border-l-2 sm:border-t-0">
-                <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-white/80">Entry fee</p>
-                <p className="display text-6xl leading-none">{payment.fee}</p>
-                <p className="mt-1 text-xs font-semibold uppercase tracking-widest text-white/80">
-                  per participant
-                </p>
+              {/* Dashed divider line on desktop */}
+              <div className="hidden h-44 border-r-2 border-dashed border-white/30 md:block" />
+
+              {/* bKash Payment QR Code Card */}
+              <div className="flex flex-col items-center justify-center border-t-2 border-dashed border-white/25 pt-6 md:border-t-0 md:pt-0">
+                <div className="rounded-2xl bg-white p-3 shadow-xl transition hover:scale-[1.03]">
+                  <img
+                    src={asset("images/payment-qr.jpg")}
+                    alt="bKash Payment QR Code"
+                    className="h-44 w-auto rounded-xl object-contain sm:h-52"
+                  />
+                  <p className="mt-2 text-center text-[10px] font-bold uppercase tracking-wider text-slate-800">
+                    Scan via any payment gateway App
+                  </p>
+                </div>
               </div>
             </div>
           </div>
