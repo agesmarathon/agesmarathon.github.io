@@ -9,7 +9,7 @@ export function Footer() {
       <Band tone="muted" />
       <div className="stripes absolute inset-0" />
 
-      <div className="relative mx-auto w-full max-w-6xl px-5 py-14">
+      <div className="relative mx-auto w-full max-w-6xl px-5 py-8 sm:py-10">
         <div className="flex flex-col items-start justify-between gap-10 md:flex-row">
           <div className="max-w-sm">
             <div className="flex items-center gap-3">

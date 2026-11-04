@@ -32,7 +32,7 @@ export function Hero() {
         </span>
       </div>
 
-      <div className="relative mx-auto w-full max-w-6xl px-5 pt-28 pb-24">
+      <div className="relative mx-auto w-full max-w-6xl px-5 pt-24 pb-14 sm:pb-16">
         <span className="inline-flex items-center gap-2 rounded-full border border-crimson-500/40 bg-crimson-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-crimson-400">
           <span className="h-1.5 w-1.5 rounded-full bg-crimson-500" />
           {event.motto}

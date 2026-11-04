@@ -85,7 +85,7 @@ export function Register() {
       <div className="relative">
         <Band />
 
-        <div ref={ref} className="reveal mx-auto w-full max-w-6xl px-5 py-20 sm:py-24">
+        <div ref={ref} className="reveal mx-auto w-full max-w-6xl px-5 py-10 sm:py-14">
           <div className="text-center">
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-crimson-400">Registration</p>
             <h2 className="display text-4xl text-white sm:text-6xl">Secure your BIB</h2>

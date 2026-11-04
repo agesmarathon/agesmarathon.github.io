@@ -109,7 +109,7 @@ export function Venue() {
       </div>
 
       {/* Live Interactive Map at the bottom of the Venue section */}
-      <div className="mt-14 overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-4 sm:p-6 backdrop-blur shadow-xl">
+      <div className="mt-8 sm:mt-10 overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-4 sm:p-6 backdrop-blur shadow-xl">
         <div className="mb-4 flex flex-wrap items-center justify-between gap-4">
           <div>
             <div className="flex items-center gap-2.5">
