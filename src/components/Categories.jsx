@@ -1,6 +1,7 @@
 import { categories, payment, event } from '../data/event'
 import { Section } from './Section'
 import { asset } from '../lib/asset'
+import { FiCheck } from 'react-icons/fi'
 
 // thin varying bars, like the barcode printed on a real race BIB
 const barcode = [2, 1, 3, 1, 1, 2, 4, 1, 2, 1, 3, 2, 1, 1, 2, 3, 1, 2, 1, 4, 2, 1, 1, 3]
@@ -21,7 +22,7 @@ export function Categories() {
       id="categories"
       eyebrow="Race categories"
       title="Two distances, one finish line"
-      subtitle="Your distance follows the gender you select on the registration form — there is nothing extra to choose. Open to every age."
+      subtitle="Your distance follows the gender you select on the registration form; there is nothing extra to choose. Open to every age."
     >
       <div className="grid gap-7 md:grid-cols-2">
         {categories.map((c) => (
@@ -67,9 +68,9 @@ export function Categories() {
 
             <ul className="mt-6 flex-1 space-y-2 text-sm text-slate-200">
               {c.perks.map((p) => (
-                <li key={p} className="flex gap-2">
-                  <span className="text-crimson-400">✓</span>
-                  {p}
+                <li key={p} className="flex items-center gap-2.5">
+                  <FiCheck className="text-crimson-400 shrink-0 text-base" />
+                  <span>{p}</span>
                 </li>
               ))}
             </ul>

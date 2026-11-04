@@ -3,12 +3,13 @@ import { event, payment } from '../data/event'
 import { useReveal } from '../lib/useReveal'
 import { Band } from './Band'
 import { asset } from '../lib/asset'
+import { FiCheck, FiLock, FiMail, FiUser, FiArrowUpRight } from 'react-icons/fi'
 
 // What the form asks for, so people can have it ready before they open it.
 const checklist = [
   'Your full name, date of birth and gender',
   'Which school you attended (GNHS or other)',
-  'Your t-shirt size — the form lists chest and length for each',
+  'Your t-shirt size (the form lists chest and length for each)',
   'A picture of yourself (under 1 MB)',
   'Your phone number and email',
   `The last 4 digits of your ${payment.method} transaction ID`,
@@ -48,9 +49,16 @@ function CopyButton({ value }) {
   return (
     <button
       onClick={copy}
-      className="rounded-full border border-white/40 bg-white/15 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white transition hover:bg-white/25"
+      className="inline-flex items-center gap-1.5 rounded-full border border-white/40 bg-white/15 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white transition hover:bg-white/25"
     >
-      {copied ? '✓ Copied' : 'Copy number'}
+      {copied ? (
+        <>
+          <FiCheck className="text-emerald-300 text-sm" />
+          <span>Copied</span>
+        </>
+      ) : (
+        'Copy number'
+      )}
     </button>
   )
 }
@@ -81,13 +89,11 @@ export function Register() {
           <div className="text-center">
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-crimson-400">Registration</p>
             <h2 className="display text-4xl text-white sm:text-6xl">Secure your BIB</h2>
-            <div className="mx-auto mt-5 flex max-w-max items-center gap-3 text-crimson-400/60">
-              <span className="h-px w-12 bg-crimson-500/40" />
-              <span className="text-xs">★</span>
-              <span className="h-px w-12 bg-crimson-500/40" />
+            <div className="mx-auto mt-5 flex max-w-max items-center text-xs text-crimson-400/60">
+              <span>★</span>
             </div>
             <p className="mx-auto mt-5 max-w-2xl text-slate-200">
-              Registration closes on {event.registrationCloses} or once slots run out — whichever comes first.
+              Registration closes on {event.registrationCloses} or once slots run out, whichever comes first.
             </p>
           </div>
 
@@ -180,9 +186,9 @@ export function Register() {
                   </p>
                   <ul className="mt-4 space-y-2.5">
                     {checklist.map((c) => (
-                      <li key={c} className="flex gap-3 text-base text-slate-100">
-                        <span className="mt-0.5 text-crimson-400">✓</span>
-                        {c}
+                      <li key={c} className="flex items-start gap-3 text-base text-slate-100">
+                        <FiCheck className="mt-1 text-crimson-400 shrink-0 text-base" />
+                        <span>{c}</span>
                       </li>
                     ))}
                   </ul>
@@ -197,9 +203,10 @@ export function Register() {
                     href={event.formUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="btn-shine mt-5 block rounded-full bg-crimson-500 px-6 py-4 text-base font-bold text-white shadow-xl shadow-crimson-600/25 transition hover:-translate-y-0.5 hover:bg-crimson-400"
+                    className="btn-shine mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-crimson-500 px-6 py-4 text-base font-bold text-white shadow-xl shadow-crimson-600/25 transition hover:-translate-y-0.5 hover:bg-crimson-400"
                   >
-                    Open the registration form ↗
+                    <span>Open the registration form</span>
+                    <FiArrowUpRight className="text-lg" />
                   </a>
                   <p className="mt-3 text-xs leading-relaxed text-slate-300">
                     Opens Google Forms in a new tab. It takes about two minutes.
@@ -208,9 +215,18 @@ export function Register() {
               </div>
 
               <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 border-t border-white/10 px-5 py-4 text-xs text-slate-300">
-                <span>🔒 Your details go straight to {event.organizer}</span>
-                <span>📧 Google emails you a copy as proof</span>
-                <span>👤 A free Gmail account is needed to upload your photo</span>
+                <span className="inline-flex items-center gap-2">
+                  <FiLock className="text-emerald-400 text-sm shrink-0" />
+                  Your details go straight to {event.organizer}
+                </span>
+                <span className="inline-flex items-center gap-2">
+                  <FiMail className="text-sky-400 text-sm shrink-0" />
+                  Google emails you a copy as proof
+                </span>
+                <span className="inline-flex items-center gap-2">
+                  <FiUser className="text-amber-400 text-sm shrink-0" />
+                  A free Gmail account is needed to upload your photo
+                </span>
               </div>
             </div>
           </div>

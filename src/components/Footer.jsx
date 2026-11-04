@@ -1,6 +1,7 @@
 import { event } from '../data/event'
 import { Band } from './Band'
 import { asset } from '../lib/asset'
+import { FiArrowRight, FiArrowUpRight, FiArrowUp } from 'react-icons/fi'
 
 export function Footer() {
   return (
@@ -30,16 +31,16 @@ export function Footer() {
             </p>
             <a
               href="#form"
-              className="mt-6 inline-block rounded-full bg-crimson-500 px-6 py-2.5 text-sm font-bold text-white transition hover:bg-crimson-400"
+              className="mt-6 inline-flex items-center gap-2 rounded-full bg-crimson-500 px-6 py-2.5 text-sm font-bold text-white transition hover:bg-crimson-400"
             >
-              Register now →
+              <span>Register now</span>
+              <FiArrowRight className="text-base" />
             </a>
           </div>
 
           <div className="grid grid-cols-2 gap-10 text-sm">
             <div>
-              <h4 className="mb-4 flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-slate-400">
-                <span className="h-px w-4 bg-crimson-500/60" />
+              <h4 className="mb-4 text-xs font-semibold uppercase tracking-widest text-slate-400">
                 Event
               </h4>
               <ul className="space-y-2 text-slate-200">
@@ -52,8 +53,7 @@ export function Footer() {
               </ul>
             </div>
             <div className="min-w-0">
-              <h4 className="mb-4 flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-slate-400">
-                <span className="h-px w-4 bg-crimson-500/60" />
+              <h4 className="mb-4 text-xs font-semibold uppercase tracking-widest text-slate-400">
                 Contact
               </h4>
               <ul className="space-y-2 text-slate-200">
@@ -68,13 +68,15 @@ export function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a href={event.facebook} target="_blank" rel="noreferrer" className="transition hover:text-crimson-400">
-                    Facebook ↗
+                  <a href={event.facebook} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 transition hover:text-crimson-400">
+                    <span>Facebook</span>
+                    <FiArrowUpRight className="text-xs" />
                   </a>
                 </li>
                 <li>
-                  <a href={event.formUrl} target="_blank" rel="noreferrer" className="transition hover:text-crimson-400">
-                    Register ↗
+                  <a href={event.formUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 transition hover:text-crimson-400">
+                    <span>Register</span>
+                    <FiArrowUpRight className="text-xs" />
                   </a>
                 </li>
               </ul>
@@ -84,7 +86,10 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-dashed border-white/10 pt-6 text-xs text-slate-400 sm:flex-row">
           <span>© {new Date().getFullYear()} {event.organizerFor}. All rights reserved.</span>
-          <a href="#top" className="transition hover:text-crimson-400">Back to top ↑</a>
+          <a href="#top" className="inline-flex items-center gap-1 transition hover:text-crimson-400">
+            <span>Back to top</span>
+            <FiArrowUp className="text-xs" />
+          </a>
         </div>
       </div>
     </footer>

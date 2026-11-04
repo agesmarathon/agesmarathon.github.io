@@ -1,19 +1,20 @@
 import { event, stats } from '../data/event'
 import { Section } from './Section'
+import { FaPersonRunning, FaHandshake, FaHeartPulse } from 'react-icons/fa6'
 
 const pillars = [
   {
-    icon: '🏃',
+    icon: <FaPersonRunning className="text-crimson-400 text-2xl" />,
     title: 'Fitness for a better tomorrow',
     text: 'A morning run that gets the whole neighbourhood moving, from school juniors to senior alumni.',
   },
   {
-    icon: '🤝',
+    icon: <FaHandshake className="text-amber-400 text-2xl" />,
     title: 'A stronger alumni network',
     text: 'Batch after batch of GNHS ex-students on the same road, building the connections AGES was founded for.',
   },
   {
-    icon: '❤️',
+    icon: <FaHeartPulse className="text-rose-400 text-2xl" />,
     title: 'A healthier community',
     text: 'Every registration supports AGES welfare work for the school and the families around it.',
   },
@@ -61,7 +62,6 @@ export function About() {
         </blockquote>
 
         <figcaption className="mt-7 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs uppercase tracking-[0.18em] text-slate-300 sm:tracking-[0.3em]">
-          <span className="h-px w-8 bg-crimson-500/60" />
           {event.quote.author}
           <span className="text-slate-400">·</span>
           {event.quote.authorNote}
@@ -70,7 +70,7 @@ export function About() {
 
       {/* who AGES is, for anyone landing here for the first time */}
       <p className="mt-10 max-w-3xl border-l-2 border-crimson-500/50 pl-5 text-lg leading-relaxed text-slate-100">
-        {event.name} is the flagship run of the {event.organizerFor} — {event.organizerForLong}. Organised by{' '}
+        {event.name} is the flagship run of the {event.organizerFor} ({event.organizerForLong}). Organised by{' '}
         {event.organizer}, it brings alumni, students, teachers and the people of Halishahar together for a cause
         that lasts well past the finish line.
       </p>
@@ -86,12 +86,11 @@ export function About() {
               0{i + 1}
             </span>
 
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-crimson-500/30 bg-crimson-500/10 text-2xl">
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-crimson-500/30 bg-crimson-500/10">
               {p.icon}
             </div>
             <h3 className="display mt-5 text-2xl text-white">{p.title}</h3>
             <p className="mt-3 text-sm leading-relaxed text-slate-200">{p.text}</p>
-            <span className="mt-5 block h-px w-10 bg-crimson-500/50 transition-all group-hover:w-20" />
           </div>
         ))}
       </div>

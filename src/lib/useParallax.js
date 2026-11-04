@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 
 // Drifts an image against the scroll. `speed` is how far it moves relative to
-// the page — 0.15 means a sixth of the distance you scroll.
+// the page (0.15 means a sixth of the distance you scroll).
 //
 // The element it is attached to must be oversized (taller than its frame) and
 // sit inside an overflow-hidden parent, or the drift exposes an edge.

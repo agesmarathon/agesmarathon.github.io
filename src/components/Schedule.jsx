@@ -7,7 +7,7 @@ export function Schedule() {
       id="schedule"
       eyebrow="Race day"
       title="Schedule"
-      subtitle="Reach the ground early — BIB collection closes 15 minutes before your flag-off."
+      subtitle="Reach the ground early. BIB collection closes 15 minutes before your flag-off."
     >
       <ol className="relative space-y-4 pl-10 sm:pl-16">
         {/* the line the markers sit on */}

@@ -1,4 +1,4 @@
-# AGES Marathon 2026 — single page site
+# AGES Marathon 2026: single page site
 
 React + Vite + Tailwind CSS v4. No backend, no database, no paid service.
 Registration is handled by your existing **Google Form**, which is embedded in the
@@ -36,7 +36,7 @@ Almost everything you will want to change lives in **one file**:
 
 The countdown reads `event.dateISO`, so changing that one line updates the timer.
 
-Images live in `public/images/` — replace `run.jpg` (hero), `venue.jpg`,
+Images live in `public/images/`: replace `run.jpg` (hero), `venue.jpg`,
 `banner.jpg` (organising committee) and `logo.jpg` with your own files of the
 same name and nothing else needs to change.
 
@@ -70,7 +70,7 @@ The form has a **Picture** upload question, and Google requires every responder
 to be signed in to a Google account for file uploads. There is no way around it
 while that question exists. Two options:
 
-- Keep it — note on the site that a free Gmail account is needed (already
+- Keep it: note on the site that a free Gmail account is needed (already
   written into the Register section and the FAQ), or
 - Delete the Picture question, and then set
   *Responses → Collect email addresses* → **Responder input** so that anyone can
@@ -130,7 +130,7 @@ npm run deploy
 
 `vite.config.js` uses `base: '/'` because an organisation site is served from
 the root. If you ever publish to a *project* repo instead
-(`github.io/<repo>/`), set `base` to `'/<repo>/'` — images already go through
+(`github.io/<repo>/`), set `base` to `'/<repo>/'` (images already go through
 the `asset()` helper in `src/lib/asset.js`, so they follow the base either way.
 
 **Pages vs Vercel.** Both can run from the same repo. `git push` updates

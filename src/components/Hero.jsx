@@ -2,11 +2,12 @@ import { event } from '../data/event'
 import { Countdown } from './Countdown'
 import { useParallax } from '../lib/useParallax'
 import { asset } from '../lib/asset'
+import { FiCalendar, FiClock, FiMapPin, FiArrowRight, FiArrowDown } from 'react-icons/fi'
 
 const facts = [
-  { icon: '📅', text: event.dateLabel },
-  { icon: '⏱', text: event.timeLabel },
-  { icon: '📍', text: event.city },
+  { icon: <FiCalendar className="text-crimson-400 text-base shrink-0" />, text: event.dateLabel },
+  { icon: <FiClock className="text-amber-400 text-base shrink-0" />, text: event.timeLabel },
+  { icon: <FiMapPin className="text-emerald-400 text-base shrink-0" />, text: event.city },
 ]
 
 export function Hero() {
@@ -53,7 +54,7 @@ export function Hero() {
           {facts.map((f) => (
             <span
               key={f.text}
-              className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-4 py-2 text-sm text-slate-100 backdrop-blur"
+              className="inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-white/[0.06] px-4 py-2 text-sm text-slate-100 backdrop-blur"
             >
               <span>{f.icon}</span>
               {f.text}
@@ -64,10 +65,10 @@ export function Hero() {
         <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
           <a
             href="#form"
-            className="btn-shine group rounded-full bg-crimson-500 px-8 py-4 text-center text-base font-bold text-white shadow-xl shadow-crimson-600/20 transition hover:-translate-y-0.5 hover:bg-crimson-400"
+            className="btn-shine group inline-flex items-center justify-center gap-2 rounded-full bg-crimson-500 px-8 py-4 text-center text-base font-bold text-white shadow-xl shadow-crimson-600/20 transition hover:-translate-y-0.5 hover:bg-crimson-400"
           >
-            Register Free Online
-            <span className="ml-2 inline-block transition-transform group-hover:translate-x-1">→</span>
+            <span>Register Free Online</span>
+            <FiArrowRight className="transition-transform group-hover:translate-x-1" />
           </a>
           <a
             href="#categories"
@@ -78,8 +79,7 @@ export function Hero() {
         </div>
 
         <div className="mt-14">
-          <p className="mb-3 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-slate-300">
-            <span className="h-px w-6 bg-crimson-500/50" />
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-slate-300">
             Flag-off countdown
           </p>
           <Countdown dateISO={event.dateISO} />
@@ -95,8 +95,8 @@ export function Hero() {
         href="#about"
         className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-white/50 transition hover:text-crimson-400 sm:flex"
       >
-        Scroll
-        <span className="animate-bounce text-base">↓</span>
+        <span>Scroll</span>
+        <FiArrowDown className="animate-bounce text-sm text-crimson-400" />
       </a>
     </section>
   )

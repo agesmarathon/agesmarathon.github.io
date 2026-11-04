@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { faqs, event } from '../data/event'
 import { Section } from './Section'
+import { FiArrowRight, FiPlus } from 'react-icons/fi'
 
 export function Faq() {
   const [open, setOpen] = useState(0)
@@ -39,7 +40,7 @@ export function Faq() {
                     isOpen ? 'rotate-45' : ''
                   }`}
                 >
-                  +
+                  <FiPlus />
                 </span>
               </button>
               {isOpen && (
@@ -61,9 +62,10 @@ export function Faq() {
         </div>
         <a
           href="#form"
-          className="shrink-0 rounded-full bg-crimson-500 px-7 py-3 text-sm font-bold text-white transition hover:bg-crimson-400"
+          className="inline-flex shrink-0 items-center gap-2 rounded-full bg-crimson-500 px-7 py-3 text-sm font-bold text-white transition hover:bg-crimson-400"
         >
-          Register now →
+          <span>Register now</span>
+          <FiArrowRight className="text-base" />
         </a>
       </div>
     </Section>
