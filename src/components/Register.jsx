@@ -106,7 +106,7 @@ export function Register() {
                   key={s.n}
                   className="rounded-2xl border border-white/10 bg-forest-950/80 p-6 backdrop-blur transition hover:-translate-y-1 hover:border-crimson-500/40"
                 >
-                  <div className="display flex h-10 w-10 items-center justify-center rounded-full border border-crimson-500/50 bg-forest-950 text-lg text-crimson-400">
+                  <div className="step-circle display flex h-10 w-10 items-center justify-center rounded-full border border-crimson-500/50 bg-forest-950 text-lg text-crimson-400">
                     {s.n}
                   </div>
                   <h3 className="mt-4 font-semibold text-white">{s.title}</h3>
@@ -152,7 +152,7 @@ export function Register() {
                     className="h-44 w-auto rounded-xl object-contain sm:h-52"
                   />
                   <p className="mt-2 text-center text-[10px] font-bold uppercase tracking-wider text-slate-800">
-                    Scan via any payment gateway App
+                    Scan via any  <br/> payment gateway App
                   </p>
                 </div>
               </div>

@@ -412,6 +412,18 @@ html.light #schedule .bg-forest-950 {
 html.light #register .from-forest-900.via-forest-950 {
   background: linear-gradient(to bottom, #edf4ef, #f7faf8, #f7faf8) !important;
 }
+html.light #register .bg-forest-950\/80 {
+  background-color: #ffffff !important;
+  border-color: rgba(12, 45, 32, 0.1) !important;
+  box-shadow: 0 4px 20px -2px rgba(12, 45, 32, 0.05);
+}
+html.light #register .step-circle,
+html.light #register .display.bg-forest-950,
+html.light #register div.bg-forest-950 {
+  background-color: #fff1f2 !important;
+  border-color: rgba(216, 31, 54, 0.4) !important;
+  color: #d81f36 !important;
+}
 html.light #form .bg-white\/\[0\.04\] {
   background-color: #ffffff !important;
   box-shadow: 0 20px 40px -10px rgba(12, 45, 32, 0.08);
