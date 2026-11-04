@@ -64,7 +64,7 @@ export function Hero() {
 
         <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
           <a
-            href="#form"
+            href={event.formUrl} target="_blank" rel="noreferrer"
             className="btn-shine group inline-flex items-center justify-center gap-2 rounded-full bg-crimson-500 px-8 py-4 text-center text-base font-bold text-white shadow-xl shadow-crimson-600/20 transition hover:-translate-y-0.5 hover:bg-crimson-400"
           >
             <span>Register Free Online</span>

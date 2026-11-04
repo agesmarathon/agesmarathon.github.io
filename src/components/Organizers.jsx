@@ -51,7 +51,7 @@ export function Organizers() {
           </div>
 
           <a
-            href="#form"
+            href={event.formUrl} target="_blank" rel="noreferrer"
             className="mt-8 inline-flex items-center gap-2 rounded-full bg-crimson-500 px-7 py-3 text-sm font-bold text-white transition hover:bg-crimson-400"
           >
             <span>Join the run</span>

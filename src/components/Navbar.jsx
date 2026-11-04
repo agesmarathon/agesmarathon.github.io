@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { asset } from '../lib/asset'
 import { useTheme } from '../lib/useTheme'
+import { event } from '../data/event'
 import { FiSun, FiMoon } from 'react-icons/fi'
 
 const links = [
@@ -89,7 +90,7 @@ export function Navbar() {
 
           <li>
             <a
-              href="#register"
+              href={event.formUrl} target="_blank" rel="noreferrer"
               className="rounded-full bg-crimson-500 px-5 py-2.5 text-sm font-bold text-white shadow-md shadow-crimson-600/20 transition hover:bg-crimson-400"
             >
               Register Now
@@ -152,7 +153,7 @@ export function Navbar() {
             </a>
           ))}
           <a
-            href="#register"
+            href={event.formUrl} target="_blank" rel="noreferrer"
             onClick={() => setOpen(false)}
             className="mt-4 block rounded-full bg-crimson-500 py-3 text-center font-bold text-white shadow-md shadow-crimson-600/20"
           >

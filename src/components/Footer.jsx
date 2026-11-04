@@ -30,7 +30,7 @@ export function Footer() {
               {event.organizerFor}.
             </p>
             <a
-              href="#form"
+              href={event.formUrl} target="_blank" rel="noreferrer"
               className="mt-6 inline-flex items-center gap-2 rounded-full bg-crimson-500 px-6 py-2.5 text-sm font-bold text-white transition hover:bg-crimson-400"
             >
               <span>Register now</span>
