@@ -15,6 +15,10 @@ export const event = {
   city: 'Chattogram, Bangladesh',
   venue: 'Garib-E-Newaz High School',
   venueAddress: 'Halishahar Housing Estate, Chattogram, Bangladesh',
+  coordinates: {
+    lat: 22.33588,
+    lng: 91.78412,
+  },
   mapsUrl: 'https://maps.google.com/?q=Garib-E-Newaz+High+School+Halishahar+Housing+Estate+Chattogram',
   organizer: 'Team SAF',
   organizerTagline: 'We turn visions into visuals and moments into stories.',
@@ -28,7 +32,7 @@ export const event = {
   founded: '30 September 2023',
 
   // The quote that opens the About section. `feature` sets the line that
-  // carries the passage — it is rendered larger than the other two.
+  // carries the passage (rendered larger than the other two).
   quote: {
     lines: [
       { text: 'We turn visions into visuals and moments into stories.' },
@@ -48,7 +52,7 @@ export const event = {
     'https://docs.google.com/forms/d/e/1FAIpQLSeaDRooMaLdvF-k3GyOmu4G0GEoZ0KYdmq98TT1MJsm9GPwGQ/viewform',
 }
 
-// Registration fee and how it is paid — matches the Google Form.
+// Registration fee and how it is paid (matches the Google Form).
 export const payment = {
   fee: '৳ 699',
   method: 'bKash',
@@ -97,7 +101,7 @@ export const schedule = [
 export const faqs = [
   {
     q: 'How do I register?',
-    a: 'Fill in the registration form on this page and press Submit. Google shows a confirmation screen straight away and emails you a copy of your answers — that email is your proof of registration.',
+    a: 'Fill in the registration form on this page and press Submit. Google shows a confirmation screen straight away and emails you a copy of your answers. That email is your proof of registration.',
   },
   {
     q: 'Why does the form ask me to sign in to Google?',
@@ -109,11 +113,11 @@ export const faqs = [
   },
   {
     q: 'Which distance will I run?',
-    a: 'It follows the gender you select in the form — male participants run 7.5 KM and female participants run 5 KM. There is no separate category to choose.',
+    a: 'It follows the gender you select in the form: male participants run 7.5 KM and female participants run 5 KM. There is no separate category to choose.',
   },
   {
     q: 'Is there an age limit?',
-    a: 'No. The run is open to every age — school juniors, alumni of every batch, teachers and family members are all welcome.',
+    a: 'No. The run is open to every age: school juniors, alumni of every batch, teachers and family members are all welcome.',
   },
   {
     q: 'What do I get on race day?',
@@ -129,7 +133,7 @@ export const faqs = [
 // Drop new files in public/images/ and add a line here.
 export const gallery = [
   {
-    src: 'images/gallery-2.jpg',
+    src: 'images/gghd.jpeg',
     caption: 'World Stroke Day Marathon',
     note: 'AGES members with their finisher medals',
   },

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { gallery } from '../data/event'
 import { asset } from '../lib/asset'
 import { Section } from './Section'
+import { FiX, FiMaximize2 } from 'react-icons/fi'
 
 function Lightbox({ photo, onClose }) {
   useEffect(() => {
@@ -23,10 +24,10 @@ function Lightbox({ photo, onClose }) {
     >
       <button
         onClick={onClose}
-        className="absolute right-5 top-5 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 text-xl text-white transition hover:bg-white/10"
+        className="absolute right-5 top-5 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 text-white transition hover:bg-white/10"
         aria-label="Close"
       >
-        ✕
+        <FiX className="text-2xl" />
       </button>
       <figure onClick={(e) => e.stopPropagation()} className="max-h-full">
         <img
@@ -51,7 +52,7 @@ export function Gallery() {
       id="gallery"
       eyebrow="Gallery"
       title="AGES on the road"
-      subtitle="Our alumni already run together across Chattogram — World Stroke Day, CR 10K and more. In December the start line is ours."
+      subtitle="Our alumni already run together across Chattogram (World Stroke Day, CR 10K and more). In December the start line is ours."
     >
       <div className="grid gap-5 md:grid-cols-2">
         {gallery.map((p, i) => (
@@ -77,8 +78,9 @@ export function Gallery() {
               <p className="mt-1 text-sm text-slate-200">{p.note}</p>
             </div>
 
-            <span className="absolute right-4 top-4 rounded-full border border-white/25 bg-forest-950/60 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white opacity-0 backdrop-blur transition group-hover:opacity-100">
-              View ⤢
+            <span className="absolute right-4 top-4 inline-flex items-center gap-1.5 rounded-full border border-white/25 bg-forest-950/60 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white opacity-0 backdrop-blur transition group-hover:opacity-100">
+              <span>View</span>
+              <FiMaximize2 className="text-[11px]" />
             </span>
           </button>
         ))}
@@ -86,7 +88,7 @@ export function Gallery() {
 
       <p className="mt-6 flex items-center gap-2 text-sm text-slate-300">
         <span className="text-crimson-400">★</span>
-        Photos from past runs by AGES members. Yours could be here next — the December start list is open.
+        Photos from past runs by AGES members. Yours could be here next; the December start list is open.
       </p>
 
       {open && <Lightbox photo={open} onClose={() => setOpen(null)} />}
