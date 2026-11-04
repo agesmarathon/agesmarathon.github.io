@@ -6,6 +6,7 @@ import { Categories } from './components/Categories'
 import { Schedule } from './components/Schedule'
 import { Venue } from './components/Venue'
 import { Register } from './components/Register'
+import { PhotoCard } from './components/PhotoCard'
 import { Organizers } from './components/Organizers'
 import { Gallery } from './components/Gallery'
 import { Faq } from './components/Faq'
@@ -26,6 +27,7 @@ export default function App() {
         <Schedule />
         <Venue />
         <Register />
+        <PhotoCard />
         <Organizers />
         <Gallery />
         <Faq />

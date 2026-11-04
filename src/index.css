@@ -17,9 +17,45 @@
   --font-quote: "Instrument Serif", ui-serif, Georgia, serif;
 }
 
+/* ── Custom Theme-Matched Thin Scrollbar ─────────────────── */
+:root, html.dark {
+  --scrollbar-track: #04251a;
+  --scrollbar-thumb: #d81f36;
+  --scrollbar-thumb-hover: #ff5c69;
+}
+
+html.light {
+  --scrollbar-track: #e8eee9;
+  --scrollbar-thumb: #d81f36;
+  --scrollbar-thumb-hover: #b3152a;
+}
+
+/* Firefox */
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+/* WebKit (Chrome, Edge, Safari, Opera) */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 9999px;
+  transition: background-color 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
 }
 
 body {
@@ -27,6 +63,7 @@ body {
   color: #e8edf7;
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 .display {
@@ -34,7 +71,6 @@ body {
   letter-spacing: 0.01em;
   text-transform: uppercase;
   line-height: 0.95;
-  /* a soft halo so headings lift off the deep green rather than sink into it */
   text-shadow: 0 0 34px rgba(255, 255, 255, 0.12);
 }
 
@@ -130,10 +166,478 @@ p {
   height: 1.75rem;
   border-radius: 9999px;
   background: var(--color-forest-950);
+  transition: background-color 0.25s ease;
 }
 .ticket-notch::before { left: -0.875rem; top: 50%; transform: translateY(-50%); }
 .ticket-notch::after  { right: -0.875rem; top: 50%; transform: translateY(-50%); }
 
 @media (prefers-reduced-motion: reduce) {
   .marquee-track { animation: none; }
+}
+
+/* ── LIGHT THEME COMPLETE TYPOGRAPHY & VISIBILITY OVERRIDES ──── */
+html.light {
+  color-scheme: light;
+}
+
+html.light body {
+  background-color: #f7faf8 !important;
+  color: #334155 !important;
+}
+
+/* 1. In Light Mode, map text utilities to high-contrast dark tones by default */
+html.light .text-white {
+  color: #0c2d20;
+}
+html.light .text-slate-100 {
+  color: #0f172a;
+}
+html.light .text-slate-200 {
+  color: #334155;
+}
+html.light .text-slate-300 {
+  color: #475569;
+}
+html.light .text-slate-400 {
+  color: #64748b;
+}
+html.light .text-crimson-400 {
+  color: #be123c;
+}
+
+/* Headings in light mode */
+html.light .display {
+  color: #0c2d20;
+  text-shadow: none;
+}
+html.light h1,
+html.light h2,
+html.light h3,
+html.light h4,
+html.light h5 {
+  color: #0c2d20;
+}
+html.light .glow-red {
+  color: #be123c;
+  text-shadow: none;
+}
+
+/* Quotes in light mode */
+html.light blockquote.quote-type {
+  color: #1e293b !important;
+}
+html.light .quote-type p {
+  color: #1e293b;
+}
+
+/* 2. PROTECT DARK CONTAINERS: text inside these containers MUST stay crisp white/light */
+html.light header.header-transparent nav .text-white,
+html.light header.header-transparent nav .display,
+html.light #top .text-white,
+html.light #top .display,
+html.light footer .text-white,
+html.light footer .display,
+html.light .ticket-notch .text-white,
+html.light .ticket-notch .display,
+html.light .btn-shine,
+html.light .btn-shine *,
+html.light .bg-crimson-500,
+html.light .bg-crimson-500 *,
+html.light .bg-crimson-600,
+html.light .bg-crimson-600 *,
+html.light [role="dialog"] .display,
+html.light [role="dialog"] .text-white,
+html.light #gallery .absolute .display,
+html.light #gallery .absolute .text-white,
+html.light .venue-marker-icon,
+html.light .venue-marker-icon * {
+  color: #ffffff !important;
+}
+
+html.light header.header-transparent nav .text-slate-100,
+html.light #top .text-slate-100,
+html.light footer .text-slate-200,
+html.light #gallery .absolute .text-slate-200 {
+  color: #e2e8f0 !important;
+}
+
+html.light header.header-transparent nav a:hover,
+html.light header.header-transparent nav .text-slate-100:hover {
+  color: #ff5c69 !important;
+}
+
+html.light header.header-transparent nav .text-crimson-400,
+html.light header.header-transparent nav .glow-red,
+html.light #top .text-crimson-400,
+html.light footer .text-crimson-400,
+html.light [role="dialog"] .text-crimson-400 {
+  color: #ff5c69 !important;
+}
+
+html.light header.header-transparent nav .glow-red,
+html.light #top .glow-red,
+html.light footer .glow-red {
+  color: #ff5c69 !important;
+  text-shadow: 0 0 26px rgba(216, 31, 54, 0.55) !important;
+}
+
+html.light header.header-transparent nav .theme-toggle-btn {
+  border-color: rgba(255, 255, 255, 0.25) !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: #fcd34d !important;
+}
+
+html.light header.header-transparent nav .mobile-menu-btn {
+  border-color: rgba(255, 255, 255, 0.25) !important;
+  color: #ffffff !important;
+}
+
+/* Cards & containers in light mode */
+html.light .bg-white\/\[0\.04\],
+html.light .bg-white\/\[0\.03\],
+html.light .bg-white\/\[0\.05\],
+html.light .bg-forest-950\/80 {
+  background-color: #ffffff !important;
+  box-shadow: 0 4px 20px -2px rgba(12, 45, 32, 0.05);
+}
+
+html.light .bg-white\/\[0\.04\]:hover,
+html.light .bg-white\/\[0\.03\]:hover,
+html.light .bg-white\/\[0\.06\]:hover,
+html.light .bg-white\/\[0\.07\]:hover {
+  background-color: #ffffff !important;
+  box-shadow: 0 10px 25px -4px rgba(12, 45, 32, 0.09);
+}
+
+/* Borders in light mode */
+html.light .border-white\/10,
+html.light .border-white\/15,
+html.light .border-white\/20,
+html.light .border-white\/25 {
+  border-color: rgba(12, 45, 32, 0.12);
+}
+
+html.light .border-dashed.border-white\/10,
+html.light .border-dashed.border-white\/15,
+html.light .border-dashed.border-white\/20 {
+  border-color: rgba(12, 45, 32, 0.14);
+}
+
+/* Outline button in light mode (e.g. Open in Google Maps) */
+html.light a.border-white\/25:not(#top *):not(footer *) {
+  border-color: rgba(12, 45, 32, 0.22) !important;
+  color: #0c2d20 !important;
+  background-color: #ffffff !important;
+}
+html.light a.border-white\/25:not(#top *):not(footer *):hover {
+  border-color: var(--color-crimson-500) !important;
+  color: var(--color-crimson-500) !important;
+  background-color: #fff5f5 !important;
+}
+
+/* Stripes background in light mode */
+html.light .stripes {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(12, 45, 32, 0.035) 0px,
+    rgba(12, 45, 32, 0.035) 1px,
+    transparent 1px,
+    transparent 11px
+  );
+}
+
+/* Ticket notch background matches page background */
+html.light .ticket-notch::before,
+html.light .ticket-notch::after {
+  background: #f7faf8 !important;
+}
+
+/* Category cards in light mode */
+html.light #categories .group.relative {
+  background: #ffffff !important;
+  border-color: rgba(216, 31, 54, 0.28) !important;
+  box-shadow: 0 10px 30px -4px rgba(12, 45, 32, 0.06);
+}
+html.light #categories .group.relative:hover {
+  border-color: var(--color-crimson-500) !important;
+  box-shadow: 0 16px 36px -4px rgba(216, 31, 54, 0.12);
+}
+
+/* FAQ items in light mode */
+html.light #faq .overflow-hidden {
+  background-color: #ffffff !important;
+}
+html.light #faq .border-crimson-500\/45 {
+  background: linear-gradient(to bottom, rgba(216, 31, 54, 0.04), #ffffff) !important;
+}
+html.light #faq .bg-crimson-500\/\[0\.07\] {
+  background-color: #fff5f5 !important;
+  border-color: rgba(216, 31, 54, 0.22) !important;
+}
+html.light #faq button span.border-white\/20 {
+  border-color: rgba(12, 45, 32, 0.15) !important;
+  color: #475569 !important;
+  background-color: #f1f5f2 !important;
+}
+
+/* Stats container in light mode */
+html.light .bg-gradient-to-br.from-crimson-500\/\[0\.07\] {
+  background: #ffffff !important;
+  border-color: rgba(216, 31, 54, 0.2) !important;
+  box-shadow: 0 4px 20px -2px rgba(12, 45, 32, 0.05);
+}
+html.light .divide-white\/10 {
+  border-color: rgba(12, 45, 32, 0.08) !important;
+}
+
+/* Venue DL items in light mode */
+html.light #venue dt {
+  color: #64748b !important;
+}
+html.light #venue dd {
+  color: #0c2d20 !important;
+}
+html.light #venue .bg-white\/\[0\.05\] {
+  background-color: #f1f6f2 !important;
+  border-color: rgba(12, 45, 32, 0.1) !important;
+}
+
+/* Schedule marker in light mode */
+html.light #schedule .bg-forest-950 {
+  background-color: #ffffff !important;
+  border-color: rgba(216, 31, 54, 0.45) !important;
+}
+
+/* Register section layers */
+html.light #register .from-forest-900.via-forest-950 {
+  background: linear-gradient(to bottom, #edf4ef, #f7faf8, #f7faf8) !important;
+}
+html.light #form .bg-white\/\[0\.04\] {
+  background-color: #ffffff !important;
+  box-shadow: 0 20px 40px -10px rgba(12, 45, 32, 0.08);
+}
+html.light #form .border-b.border-white\/10,
+html.light #form .border-t.border-white\/10 {
+  border-color: rgba(12, 45, 32, 0.08) !important;
+}
+html.light #form .bg-crimson-500\/\[0\.08\] {
+  background-color: #fff1f2 !important;
+}
+
+/* Photo Card controls in light mode */
+html.light #photocard input[type="text"] {
+  background-color: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+html.light #photocard input[type="text"]:focus {
+  border-color: var(--color-crimson-500) !important;
+  background-color: #ffffff !important;
+}
+html.light #photocard .photo-upload-box {
+  background-color: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+}
+html.light #photocard .photo-upload-box:hover {
+  background-color: #f1f5f9 !important;
+  border-color: var(--color-crimson-500) !important;
+}
+html.light #photocard .cat-btn-inactive {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #334155 !important;
+}
+html.light #photocard .cat-btn-inactive:hover {
+  background-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+/* Watermark indices 01, 02, 03 in light mode */
+html.light .text-white\/\[0\.04\] {
+  color: rgba(12, 45, 32, 0.06) !important;
+}
+
+/* Footer in light mode: deep athletic forest tone */
+html.light footer {
+  background-color: #04251a !important;
+}
+html.light footer .display {
+  color: #ffffff !important;
+}
+html.light footer .text-slate-200 {
+  color: #e2e8f0 !important;
+}
+html.light footer .text-slate-300 {
+  color: #cbd5e1 !important;
+}
+html.light footer .text-slate-400 {
+  color: #94a3b8 !important;
+}
+html.light footer .border-white\/10 {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* ── Leaflet Custom Marker & Popup ────────────────────────────── */
+.custom-venue-pin {
+  background: transparent !important;
+  border: none !important;
+}
+
+.venue-marker-pulse {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+}
+
+.venue-marker-pulse::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 9999px;
+  background: rgba(216, 31, 54, 0.45);
+  animation: ping 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.venue-marker-icon {
+  position: relative;
+  z-index: 2;
+  width: 36px;
+  height: 36px;
+  background: #d81f36;
+  border: 3px solid #ffffff;
+  border-radius: 9999px;
+  box-shadow: 0 4px 14px rgba(216, 31, 54, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  transition: transform 0.2s ease;
+}
+
+.venue-marker-pulse:hover .venue-marker-icon {
+  transform: scale(1.12);
+}
+
+/* Leaflet Dark Popup */
+.dark .leaflet-popup-content-wrapper {
+  background: #07331f;
+  color: #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+}
+.dark .leaflet-popup-tip {
+  background: #07331f;
+}
+.dark .leaflet-container a.leaflet-popup-close-button {
+  color: #94a3b8;
+  padding: 8px 8px 0 0;
+}
+
+/* Leaflet Light Popup */
+.light .leaflet-popup-content-wrapper {
+  background: #ffffff;
+  color: #1e293b;
+  border: 1px solid rgba(12, 45, 32, 0.12);
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px -5px rgba(12, 45, 32, 0.15);
+}
+.light .leaflet-popup-tip {
+  background: #ffffff;
+}
+.light .leaflet-container a.leaflet-popup-close-button {
+  color: #64748b;
+  padding: 8px 8px 0 0;
+}
+
+/* Leaflet Zoom control styling */
+.leaflet-bar {
+  border: none !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3) !important;
+  border-radius: 0.75rem !important;
+  overflow: hidden;
+}
+.leaflet-bar a {
+  background-color: #07331f !important;
+  color: #ffffff !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  width: 32px !important;
+  height: 32px !important;
+  line-height: 32px !important;
+  transition: background-color 0.2s ease !important;
+}
+.leaflet-bar a:hover {
+  background-color: #0c4a2c !important;
+  color: #ff5c69 !important;
+}
+.light .leaflet-bar a {
+  background-color: #ffffff !important;
+  color: #0c2d20 !important;
+  border-bottom: 1px solid rgba(12, 45, 32, 0.1) !important;
+}
+.light .leaflet-bar a:hover {
+  background-color: #f1f5f2 !important;
+  color: #d81f36 !important;
+}
+
+/* Google Maps Slim Modern InfoWindow Card */
+.gm-style .gm-style-iw-c {
+  padding: 10px 14px 10px 14px !important;
+  border-radius: 14px !important;
+  box-shadow: 0 12px 30px -4px rgba(0, 0, 0, 0.18), 0 4px 10px -2px rgba(0, 0, 0, 0.08) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  background-color: #ffffff !important;
+}
+
+.gm-style .gm-style-iw-d {
+  overflow: hidden !important;
+  padding: 0 !important;
+}
+
+.gm-style .gm-style-iw-tc::after {
+  background: #ffffff !important;
+}
+
+.gm-style .gm-ui-hover-effect {
+  top: 6px !important;
+  right: 6px !important;
+  width: 20px !important;
+  height: 20px !important;
+  opacity: 0.5 !important;
+  transition: opacity 0.2s ease !important;
+}
+
+.gm-style .gm-ui-hover-effect:hover {
+  opacity: 1 !important;
+}
+
+.gm-style .gm-ui-hover-effect > span {
+  width: 12px !important;
+  height: 12px !important;
+  margin: 4px !important;
+}
+
+/* Leaflet Slim Modern Popup */
+.leaflet-popup-content-wrapper {
+  padding: 2px 4px !important;
+  border-radius: 14px !important;
+  box-shadow: 0 12px 30px -4px rgba(0, 0, 0, 0.18) !important;
+}
+
+.leaflet-popup-content {
+  margin: 10px 14px 10px 14px !important;
+  line-height: 1.3 !important;
+}
+
+/* Hide Google Maps "Use ctrl + scroll to zoom the map" overlay banner */
+.gm-style-pbc,
+.gm-style .gm-style-pbc {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
 }
