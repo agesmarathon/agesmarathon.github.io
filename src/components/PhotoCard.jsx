@@ -240,7 +240,7 @@ export function PhotoCard() {
     const measuredNameW = ctx.measureText(displayName).width
 
     ctx.font = '800 17px "Inter", sans-serif'
-    const catW = ctx.measureText(`${category.toUpperCase()} · ONE SCHOOL, ONE RUN`).width
+    const catW = ctx.measureText(`${category.toUpperCase()} · One School, One Race | No Batch Left Behind`).width
 
     ctx.font = '800 16px "Inter", sans-serif'
     const dateW = 24 + ctx.measureText('16 DECEMBER 2026').width
@@ -353,7 +353,7 @@ export function PhotoCard() {
     // Line 3: Category & Slogan (Clean ice white)
     ctx.font = '800 17px "Inter", sans-serif'
     ctx.fillStyle = '#ffffff'
-    ctx.fillText(`${category.toUpperCase()} · ONE SCHOOL, ONE RUN`, rightColX, badgeCardY + 112)
+    ctx.fillText(`${category.toUpperCase()} · One School, One Race | No Batch Left Behind`, rightColX, badgeCardY + 112)
 
     // Line 4: Date Line (Dedicated line with Theme Green / Lime focus)
     const dateX = rightColX
